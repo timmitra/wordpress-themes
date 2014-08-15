@@ -1,0 +1,83 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 15, 2014, 5:16:28 PM
+    Author     : tmitra
+*/
+
+@media screen and (max-width: 1539px) and (min-width: 1160px){ 
+    .content-area.lander-page {
+         margin-left: 0; 
+        padding-left: 0; 
+    }
+}
+
+.indent {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1099px) {
+    .indent {
+        margin: 0;
+        padding: 0 4rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .indent {
+        margin: 0 2rem;
+    }
+}
+
+.lander-page .entry-content {
+    position: relative;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* CONTENT AREA */
+.content-area {
+	background: #fff;
+	background: hsl(0, 0%, 100%);
+}
+				
+/*CALL TO ACTION*/ 
+#call-to-action {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    background: #8abf5e;
+	background: hsl(93, 43%, 56%);
+    padding: 4rem 0;
+}
+
+/* TESTIMONIALS */
+#testimonials {
+    padding: 4rem 0;
+    background: hsl(0, 0%, 90%);
+}
+
+/* SERVICES */
+#services {
+    padding: 4rem 0;
+}
+
+/* MEET THE DOCTOR */ 
+#meet {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+	color: #fff;
+    color: hsl(0, 0%, 100%);
+	background: #00497A;
+    background: hsl(204, 100%, 24%);
+}
+
+/* CONTACT */
+#contact {
+    padding: 4rem 0;
+}
+  
