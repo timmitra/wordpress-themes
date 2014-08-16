@@ -9,6 +9,8 @@ function lander_scripts() {
     if ( is_front_page() ) {
         
         wp_enqueue_style('lander-styles', get_stylesheet_directory_uri() . '/lander-styles.css');
+        
+        wp_enqueue_script( 'lander-script', get_stylesheet_directory_uri() . '/js/lander-scripts.js', array( 'jquery', '20140816' ) );
     }
 }
 
