@@ -95,12 +95,94 @@ and open the template in the editor.
     font-size: 130%;
 }
 
-/* TESTIMONIALS */
+/* TESTIMONIALS */ 
+
 #testimonials {
     padding: 4rem 0;
     background: hsl(0, 0%, 90%);
 }
+.testimonials {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex:  row wrap;
+    -moz-box-flex:  row wrap;
+    -webkit-flex:  row wrap;
+    -ms-flex:  row wrap;
+    flex: row wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+}
 
+.testimonials li {
+    padding: 2rem 0 3rem;
+    width: 100%;
+}
+
+.testimonial-thumb {
+    max-width: 30%;
+    height: auto;
+    float: left;
+}
+
+.testimonial-text {
+    float: left;
+    width: 60%;
+    margin-left: 10%;
+}
+.testimonial-thumb img {
+    border-radius: 210px;
+    border: 5px solid #fff;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    font-size: 24px;
+    font-size: 2.4rem;
+    margin: 1rem 0;
+}
+
+.testimonial-excerpt {
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+/* TESTIMONIALS RESPONSIVE */ 
+
+@media screen and (min-width: 650px) {
+    .testimonials li {
+        padding: 4rem 4rem;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .testimonials li {
+        width: 33.3333333333%;
+        padding: 2rem 4rem;
+        float: left;
+    }
+    .testimonial-thumb {
+        max-width: 210px;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    .testimonial-text {
+        float: none;
+        width: auto;
+        margin: 0;
+    }
+    
+    .testimonial-name {
+        text-align: center;
+    }
+}
 /* SERVICES */ 
 
 #services {
