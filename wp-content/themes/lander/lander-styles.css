@@ -190,12 +190,12 @@ and open the template in the editor.
 }
 #services .section-title {
     padding-bottom: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border-bottom: 2px solid #8abf5e;
 }
 
 .services-list {
-    margin: 4rem -4rem 0 -2rem;
+    margin: 2rem -4rem 0 -2rem;
     padding: 0;
     list-style: none;
 }
@@ -245,20 +245,21 @@ and open the template in the editor.
     .services-title {
         margin-bottom: 0;
         margin-right: 10%;
-        width: 40%;
+        width: 100%;
         float: left;
+        padding: 4rem 0;
     }
 
     .services-lede {
-        width: 50%;
+        width: 100%;
         float: left;
     }
     
 }
 @media screen and (min-width: 950px) {
     .services-list {
-        -webkit-column-count: 2;
-                column-count: 2;
+        -webkit-column-count: 3;
+                column-count: 3;
     }
 }
 
