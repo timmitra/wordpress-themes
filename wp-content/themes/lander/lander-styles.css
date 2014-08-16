@@ -8,6 +8,19 @@ and open the template in the editor.
     Author     : tmitra
 */
 
+.main-navigation.sticky-header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.shifted {
+    margin-top: 54px;
+}
+
+
 @media screen and (max-width: 1539px) and (min-width: 1160px){ 
     .content-area.lander-page {
          margin-left: 0; 
