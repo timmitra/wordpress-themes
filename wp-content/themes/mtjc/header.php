@@ -22,7 +22,7 @@
 <div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header" role="banner">
-            <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'simone' ); ?></a>
+            <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mtjc' ); ?></a>
                 <?php if ( get_header_image() && ('blank' == get_header_textcolor()) ) { ?>
                 <figure class="header-image">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -44,7 +44,7 @@
 		</div>
 
                 <nav id="site-navigation" class="main-navigation clear <?php if ( is_admin_bar_showing() ) { echo "loggedin"; } ?>" role="navigation">
-                    <h1 class="menu-toggle"><a href="#"><?php _e( 'Menu', 'simone' ); ?></a></h1>
+                    <h1 class="menu-toggle"><a href="#"><?php _e( 'Menu', 'mtjc' ); ?></a></h1>
 
 			<?php 
                         if (is_front_page() ) {
@@ -57,9 +57,9 @@
 
                         <div class="search-toggle">
                             <i class="fa fa-search"></i>
-                            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'simone' ); ?></a>
+                            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'mtjc' ); ?></a>
                         </div>
-                        <?php simone_social_menu(); ?>
+                        <?php //mtjc_social_menu(); ?>
 
 
 		</nav><!-- #site-navigation -->
