@@ -5,6 +5,7 @@
         <div id="copyright">
                 
             <div class="fl">
+				<p style="width:400px;"><?php wp_tag_cloud('number=40'); ?></p>
             </div>
         
         
@@ -34,8 +35,15 @@
                     
                 <?php } ?>
                 
-            </div>
+				<p>This site has been visited at least
+					<SCRIPT LANGUAGE ="JavaScript" src="http://www.it-guy.com/www.it-guy.com/thecount.js" ></SCRIPT>
+					<SCRIPT LANGUAGE ="php" src="http://www.it-guy.com/www.it-guy.com/jscount.php" ></SCRIPT>
+					<!--SCRIPT LANGUAGE ="Javascript" document.write(' offline ') ></SCRIPT-->
+					 times since March 2, 2000.
+				</p>
+           </div>
                   
+			<br />
         </div> 
     
 	</div>
@@ -44,6 +52,8 @@
     
 <?php themnific_foot(); ?>
 <?php wp_footer(); ?>
+
+
 
 </body>
 </html>

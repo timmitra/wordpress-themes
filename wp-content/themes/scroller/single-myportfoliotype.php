@@ -4,7 +4,9 @@ $large_image =  wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID())
 $large_image = $large_image[0]; 
 $video_input = get_post_meta($post->ID, 'themnific_video_embed', true);
 $project_url = get_post_meta($post->ID, 'themnific_project_url', true);
-$project_description = get_post_meta($post->ID, 'themnific_project_description', true);
+$project_implication = get_post_meta($post->ID, 'themnific_project_implication', true);
+$project_issue = get_post_meta($post->ID, 'themnific_project_issue', true);
+$project_result = get_post_meta($post->ID, 'themnific_project_result', true);
 $attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image') );
 ?>
 
@@ -36,13 +38,39 @@ $attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' =>
         <?php endif; ?>
         
         
-       	<?php if($project_description) : ?>
-        
-            <div class="hrline"><span></span></div>
-    
+       	<?php if($project_issue) : ?>
+            
             <p class="meta">
     
-                <i class="icon-info-sign"></i> <?php echo $project_description; ?>
+                 <strong>Issue: </strong><br /><?php echo $project_issue; ?>
+            
+            </p>
+            
+        <?php endif; ?> 
+        
+       	<?php if($project_implication) : ?>
+            
+            <p class="meta">
+    
+                <strong>Implication: </strong><br /><?php echo $project_implication; ?>
+            
+            </p>
+            
+        <?php endif; ?>    
+        
+        <div class="meta">
+             
+				<strong>Solution: </strong><?php the_content(); ?>
+                                
+            
+        </div>
+   
+        
+       	<?php if($project_result) : ?>
+            
+            <p class="meta">
+    
+                 <strong>Result: </strong><br /><?php echo $project_result; ?>
             
             </p>
             
@@ -76,15 +104,6 @@ $attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' =>
 				
     		 }?> 
             
-            <div class="entry entry_item">
-             
-				<?php the_content(); ?>
-                
-                <div class="hrline"><span></span></div>  
-                
-                <?php comments_template( '', true ); ?>
-            
-            </div>
   
      </div>
      

@@ -94,9 +94,25 @@ $meta_boxes[] = array(
 		
 
 		array(
-            'name' => 'Project Description',
-            'desc' => 'Inser brief project info here.',
-            'id' => $prefix . 'project_description',
+            'name' => 'Project Issue',
+            'desc' => 'Insert brief project issue here.',
+            'id' => $prefix . 'project_issue',
+            'type' => 'textarea',
+            'std' => ''
+        ),
+        
+		array(
+            'name' => 'Project Implication',
+            'desc' => 'Insert brief project implication here.',
+            'id' => $prefix . 'project_implication',
+            'type' => 'textarea',
+            'std' => ''
+        ),
+        
+		array(
+            'name' => 'Project Result',
+            'desc' => 'Insert brief project result here.',
+            'id' => $prefix . 'project_result',
             'type' => 'textarea',
             'std' => ''
         ),

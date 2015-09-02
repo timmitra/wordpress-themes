@@ -23,7 +23,7 @@ echo '<link href="http://fonts.googleapis.com/css?family='
 .str_replace(" ", "+",$font_text ["face"]).':'.$font_text["style"].'|'
 .str_replace(" ", "+",$font_nav ["face"]).':'.$font_nav["style"].'"
 
- rel="stylesheet" type="text/css">'."\n";
+ rel="stylesheet prefetch" type="text/css">'."\n";
 
 
 ?>

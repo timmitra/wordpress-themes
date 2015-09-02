@@ -12,12 +12,12 @@
                     echo ($audio_input);
             }elseif(has_post_format('gallery')){
                     echo get_template_part( '/includes/post-types/gallery-slider' );
-            } else {
+           } else {
                     if ( has_post_thumbnail()); ?>
                     
                         <a href="<?php the_permalink(); ?>">  
   
-                             <?php the_post_thumbnail('format-single', array('class' => 'main-single')); ?>
+                             <?php the_post_thumbnail('folio', array('class' => 'main-single')); ?>
       
                         </a>  
                         

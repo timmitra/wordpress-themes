@@ -198,10 +198,10 @@ function tmnf_excerpt($length_callback='', $more_callback='') {
 
 // Old Shorten Excerpt text for use in theme
 function themnific_excerpt($text, $chars = 1620) {
-	$text = $text." ";
+	$text = $text."&nbsp;";
 	$text = substr($text,0,$chars);
 	$text = substr($text,0,strrpos($text,' '));
-	$text = $text."...";
+	$text = $text.'... <a href="'.get_permalink($post->ID).'" class="read-more"><strong>Read More</strong></a>';
 	return $text;
 }
 
@@ -276,5 +276,21 @@ function the_breadcrumb() {
 }
 
 
-
+/*function my_scripts_method() {
+	 // Register the style like this for a theme:
+	 wp_register_style( 'custom-style', get_template_directory_uri() . '/apps.css', array(), '20120208', 'all' );
+	 // For either a plugin or a theme, you can then enqueue the style:
+	 wp_enqueue_style( 'custom-style' );
+}
+add_action('wp_enqueue_scripts', 'my_scripts_method');
+*/
+function add_search_to_wp_menu ( $items, $args ) {
+	if( 'home-menu' === $args -> theme_location ) {
+$items .= '<li class="menu-item menu-item-search">';
+$items .= '<form method="get" class="menu-search-form" style="padding-top:8px;width:40px;" action="' . get_bloginfo('home') . '/"><input class="text_input" type="text" value="Search + Return" name="s" id="s" onfocus="if (this.value == \'Search + Return\') {this.value = \'\';}" onblur="if (this.value == \'\') {this.value = \'Search + Return\';}" /></form>';
+$items .= '</li>';
+	}
+return $items;
+}
+add_filter('wp_nav_menu_items','add_search_to_wp_menu',10,2);
 ?>

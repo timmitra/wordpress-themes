@@ -15,11 +15,25 @@
                        		echo get_template_part( '/includes/post-types/gallery-slider' );
  					} else {
 							if ( has_post_thumbnail());
-						 		 the_post_thumbnail('format-single', array('class' => 'main-single'));  
+						 		 the_post_thumbnail('folio', array('class' => 'main-single'));  
 								
 			}?>
 			
-            <div style="clear: both;"></div>
+			<div style="clear: both;">
+			
+			<?php if ($post->ID == 2775) { ?>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- 728 x 90 leaderboard -->
+			<ins class="adsbygoogle"
+				 style="display:inline-block;width:646px;height:80px"
+				 data-ad-client="ca-pub-0424968551452024"
+				 data-ad-slot="8262937498"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			<?php } ?>
+			
+            </div>
             
             <h2 class="singletitle"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             
