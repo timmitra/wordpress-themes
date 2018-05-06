@@ -78,15 +78,15 @@ $meta_boxes[] = array(
 
         array(
             'name' => 'Section Intro',
-            'desc' => 'Enter some section intro',
+            'desc' => 'Enter plain intro text',
             'id' => $prefix. 'section_text',
             'type' => 'textarea',
             'std' => ''
         ),
 
         array(
-            'name' => 'Map Code',
-            'desc' => 'Enter iframe code for your location ',
+            'name' => 'Shortcode/Map Code area',
+            'desc' => 'Enter any shortcode (e.g. Revolution slider) or iframe code (google maps)',
             'id' => $prefix. 'map',
             'type' => 'textarea',
             'std' => ''
@@ -95,7 +95,7 @@ $meta_boxes[] = array(
 	        
 		array(
             'name' => 'Background Color',
-            'desc' => 'e.g. #FFFFFF.',
+            'desc' => 'e.g. #CCCCCC.',
             'id' => 'colorSelector',
             'type' => 'text',
             'std' => ''
@@ -146,18 +146,21 @@ class My_meta_box_layout {
 }
 	
 // enqueue scripts and styles, but only if is_admin
-add_action('admin_head','add_custom_scripts');
-function add_custom_scripts() {
-
-	if(is_admin()) {
-		wp_enqueue_style('colorpicker', get_template_directory_uri().'/functions/posttypes/colorpicker/css/colorpicker.css');
+function load_custom_wp_admin_style() {
+        wp_enqueue_style('colorpicker', get_template_directory_uri().'/functions/posttypes/colorpicker/css/colorpicker.css');
 		wp_enqueue_style('layout', get_template_directory_uri().'/functions/posttypes/colorpicker/css/layout.css');
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
+
+function my_enqueue($hook) {
+    if( 'post.php' != $hook & 'post-new.php' != $hook )
+        return;
 		wp_enqueue_script('eye', get_template_directory_uri().'/functions/posttypes/colorpicker/js/eye.js');
 		wp_enqueue_script('utils', get_template_directory_uri().'/functions/posttypes/colorpicker/js/utils.js');
 		wp_enqueue_script('bg-cutom', get_template_directory_uri().'/functions/posttypes/colorpicker/js/bg-cutom.js');
-	}
-
 }
+add_action( 'admin_enqueue_scripts', 'my_enqueue' );
 
 	/// Add meta box for multiple post types
 	function add() {

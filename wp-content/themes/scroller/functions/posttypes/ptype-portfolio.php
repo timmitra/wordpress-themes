@@ -58,11 +58,20 @@ $meta_boxes = array();
 // first meta box
 $meta_boxes[] = array(
 	'id' => 'my-meta-box-1',
-	'title' => 'Video Options',
+	'title' => 'Image/Video Options',
 	'pages' => array('myportfoliotype'), // multiple post types
 	'context' => 'normal',
 	'priority' => 'high',
 	'fields' => array(
+	
+	     array(
+            'name' => 'Display featured image on Single page',
+            'desc' => '',
+            'id' => $prefix . 'fea_image',
+            'type' => 'select',
+            'std' => '',
+            'options' => array('Yes','No')
+        ),
 
         array(
             'name' => 'Video URL',
@@ -94,25 +103,9 @@ $meta_boxes[] = array(
 		
 
 		array(
-            'name' => 'Project Issue',
-            'desc' => 'Insert brief project issue here.',
-            'id' => $prefix . 'project_issue',
-            'type' => 'textarea',
-            'std' => ''
-        ),
-        
-		array(
-            'name' => 'Project Implication',
-            'desc' => 'Insert brief project implication here.',
-            'id' => $prefix . 'project_implication',
-            'type' => 'textarea',
-            'std' => ''
-        ),
-        
-		array(
-            'name' => 'Project Result',
-            'desc' => 'Insert brief project result here.',
-            'id' => $prefix . 'project_result',
+            'name' => 'Project Description',
+            'desc' => 'Inser brief project info here.',
+            'id' => $prefix . 'project_description',
             'type' => 'textarea',
             'std' => ''
         ),

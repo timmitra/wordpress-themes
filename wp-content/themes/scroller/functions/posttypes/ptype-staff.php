@@ -1,7 +1,7 @@
 <?php 
 //Custom Post Types
-add_action('init', 'create_staff');
-function create_staff() {
+add_action('init', 'create_my_staff');
+function create_my_staff() {
     $staff_args = array(
         'label' => __('Staff','themnific'),
         'singular_label' => __('Staff','themnific'),
@@ -20,10 +20,8 @@ function create_staff() {
 			'editor', 
 			'post-thumbnails',
 			'custom-fields',
-			'page-attributes',
 			'author',
-			'thumbnail',
-			'comments'
+			'thumbnail'
 		  )
        );
   register_post_type('staff',$staff_args);
@@ -68,6 +66,16 @@ $meta_boxes[] = array(
             'std' => ''
         ),
 		
+
+		
+        array(
+            'name' => 'Read More Link',
+            'desc' => 'Add link to any page ("staff" image will be clickable)',
+            'id' => $prefix. 'staff_more',
+            'type' => 'text',
+            'std' => ''
+        ),
+		
         array(
             'name' => 'Facebook URL',
             'desc' => '',
@@ -104,6 +112,46 @@ $meta_boxes[] = array(
             'name' => 'Pinterest URL',
             'desc' => '',
             'id' => $prefix. 'staff_pinterest',
+            'type' => 'text',
+            'std' => ''
+        ),
+		
+        array(
+            'name' => 'Instagram URL',
+            'desc' => '',
+            'id' => $prefix. 'staff_instagram',
+            'type' => 'text',
+            'std' => ''
+        ),
+		
+        array(
+            'name' => 'Flickr URL',
+            'desc' => '',
+            'id' => $prefix. 'staff_flickr',
+            'type' => 'text',
+            'std' => ''
+        ),
+		
+        array(
+            'name' => 'Dribbble URL',
+            'desc' => '',
+            'id' => $prefix. 'staff_dribbble',
+            'type' => 'text',
+            'std' => ''
+        ),
+		
+        array(
+            'name' => 'Behance URL',
+            'desc' => '',
+            'id' => $prefix. 'staff_behance',
+            'type' => 'text',
+            'std' => ''
+        ),
+		
+        array(
+            'name' => 'VK URL',
+            'desc' => '',
+            'id' => $prefix. 'staff_vk',
             'type' => 'text',
             'std' => ''
         ),
