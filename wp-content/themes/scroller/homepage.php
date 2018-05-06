@@ -3,9 +3,14 @@
 Template Name: Homepage
 */
 ?>
-<?php get_header(); ?>        
+<?php get_header(); ?>  
+
+	
+    
+	<?php if (get_option('themnific_main_slider_dis') == 'true' ){echo '<div id="home"></div>';}
+    else {?>      
         
-   	<div id="home" class="mainflex_holder">
+   		<div id="home" class="mainflex_holder">
 
 			<div class="mainflex_wrap">
             
@@ -19,8 +24,10 @@ Template Name: Homepage
                 }?>
             
             </div>
+		
+		</div>
 
-	</div>
+	<?php } ?>
 
 	<div id="main">
   
@@ -41,13 +48,13 @@ Template Name: Homepage
 		$respo = get_post_meta($post->ID, 'themnific_responsive_section', true);
 		?> 
       
-           <div id="<?php if($hash) {echo $hash;} else {?>layoutpost-<?php the_ID();} ?>" class="section resmode-<?php echo $respo; ?>"
+           <div id="<?php if($hash) {echo $hash;} else {?>layoutpost-<?php the_ID();} ?>" name="<?php if($hash) {echo $hash;} else {} ?>" class="section resmode-<?php echo $respo; ?>"
            style="  <?php if($large_image) { ?>background-image:url(<?php echo $src[0] ?>);<?php } else {}?> <?php if($bg_color) { ?>background-color:<?php echo $bg_color ?>;<?php } else {}?> ">
            
            
            		
 				<?php if($map_input) {?>
-                        <?php echo ($map_input); ?>
+                        <?php echo do_shortcode($map_input); ?>
                 <?php } else {?>
            
             	<div class="container">

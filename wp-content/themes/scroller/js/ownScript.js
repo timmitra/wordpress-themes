@@ -3,8 +3,16 @@ jQuery(document).ready(function(){
 /*jshint devel:true, laxcomma:true, smarttabs:true */
 "use strict";
 
+
+
 	jQuery(function() {
 		if (jQuery.browser.webkit) {
+			jQuery(".slider_full img").css('position','relative');
+			jQuery(".slider_full img").css('top','auto');
+		}
+		
+		
+		if (jQuery.browser.msie) {
 			jQuery(".slider_full img").css('position','relative');
 			jQuery(".slider_full img").css('top','auto');
 		}
@@ -12,13 +20,14 @@ jQuery(document).ready(function(){
 	
 	
 	// parallax
-	jQuery('.section').parallax("50%", 0.05);
-	jQuery('.section_template').parallax("50%", 0.6);
+	jQuery('.section').parallax("50%", 0.04);
+	jQuery('.section_template').parallax("50%", 0.9);
 	
-	jQuery(function() {	
+	
+	jQuery(function() {
 		if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1){
-				jQuery(".section").css('background-attachment','scroll');
-				jQuery('.section').parallax("50%", 0.08);
+				jQuery(".section").css('background-attachment','initial');
+				jQuery('.section').parallax("50%", 0.2);
 		}
 	});
 	
@@ -84,7 +93,7 @@ jQuery(document).ready(function(){
 		console.log('start');},
 		end: function() {
 		console.log('stop');},
-		filter: ':not(.external a)'
+		filter: ':not(.external a):not(.menu-item-language a)'
 	});
 
 
@@ -167,7 +176,7 @@ jQuery(document).ready(function(){
 					
 		var t = Math.floor(tt.outerWidth(true)/2),
 			b = Math.floor(btn.outerWidth(true)/2),							
-			y = btn.offset().top - 30,
+			y = btn.offset().top - 55,
 			x = btn.offset().left - (t-b);
 					
 		tt.css({"top" : y+"px", "left" : x+"px", "display" : "block"});			

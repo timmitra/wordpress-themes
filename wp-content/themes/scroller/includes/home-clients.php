@@ -16,7 +16,7 @@
                 
             <?php } else { ?>
             
-                <?php the_post_thumbnail('client'); ?>
+                <?php the_post_thumbnail('clients'); ?>
                 
             <?php } ?>       
         </li>

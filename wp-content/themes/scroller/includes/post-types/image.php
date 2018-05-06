@@ -24,9 +24,9 @@
             
             <p class="meta">
             
-                <i class="icon-time"></i> <span><?php _e('On','themnific');?></span>  <?php the_time(get_option('date_format')); ?> | 
-                <i class="icon-file-alt"></i> <span> <?php the_category(', ') ?> | 
-                <i class="icon-edit"></i> <span><?php _e('By','themnific');?></span> <?php the_author_posts_link(); ?>
+                <i class="fa fa-clock-o"></i> <span><?php _e('On','themnific');?></span>  <?php the_time(get_option('date_format')); ?> | 
+                <i class="fa fa-file-o"></i> <span> <?php the_category(', ') ?> | 
+                <i class="fa fa-pencil-square-o"></i> <span><?php _e('By','themnific');?></span> <?php the_author_posts_link(); ?>
             
             </p>
             

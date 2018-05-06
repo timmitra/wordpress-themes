@@ -3,6 +3,8 @@
 				$large_image = $large_image[0]; 
 				$another_image_1 = get_post_meta($post->ID, 'themnific_image_1_url', true);
 				$video_input = get_post_meta($post->ID, 'themnific_video_url', true);
+				$project_url = get_post_meta($post->ID, 'themnific_project_url', true);
+				$project_description = get_post_meta($post->ID, 'themnific_project_description', true);
             ?>
             
             <div class="item_full item_height1">
@@ -25,7 +27,7 @@
                 
                 <p><?php echo themnific_excerpt( get_the_excerpt(), '170'); ?></p>
                 
-                <a class="hoverstuff-zoom" rel="prettyPhoto[gallery]" href="<?php if($video_input) echo $video_input; else echo $large_image; ?>"><i class="icon-fullscreen"></i></a>
-                <a class="hoverstuff-link" href="<?php the_permalink(); ?>"><i class="icon-signout"></i></a>
+                <a class="hoverstuff-zoom" rel="prettyPhoto[gallery]" href="<?php if($video_input) echo $video_input; else echo $large_image; ?>"><i class="fa fa-arrows-alt"></i></a>
+                <a class="hoverstuff-link" href="<?php the_permalink(); ?>"><i class="fa fa-sign-out"></i></a>
         
             </div>

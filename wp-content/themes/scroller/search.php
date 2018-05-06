@@ -4,7 +4,7 @@
 
     <div id="content" class="eightcol">
 
-			<h2 class="itemtitle"><?php _e('Results for','themnific');?> "<?php echo $s; ?>"</h2>
+			<h2 class="itemtitle"><?php _e('Results for','themnific');?> "<?php echo esc_attr($s); ?>"</h2>
 
 		<?php if (have_posts()) : ?>
 

@@ -4,9 +4,8 @@ $large_image =  wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID())
 $large_image = $large_image[0]; 
 $video_input = get_post_meta($post->ID, 'themnific_video_embed', true);
 $project_url = get_post_meta($post->ID, 'themnific_project_url', true);
-$project_implication = get_post_meta($post->ID, 'themnific_project_implication', true);
-$project_issue = get_post_meta($post->ID, 'themnific_project_issue', true);
-$project_result = get_post_meta($post->ID, 'themnific_project_result', true);
+$project_description = get_post_meta($post->ID, 'themnific_project_description', true);
+$featuredimage = get_post_meta($post->ID, 'themnific_fea_image', true);
 $attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image') );
 ?>
 
@@ -18,11 +17,11 @@ $attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' =>
     
     <div class="nav_item">
         
-        <?php previous_post_link('%link', '<i title="Previous Project" class="icon-double-angle-left"></i>') ?>
+        <?php previous_post_link('%link', '<i title="'.__('Previous Project','themnific').'" class="fa fa-angle-double-left"></i>') ?>
     
-    	<a href="<?php echo stripslashes(get_option('themnific_url_portfolio'));?>"><i title="Back To Portfolio"  class="icon-double-angle-up"></i></a>
+    	<a href="<?php echo stripslashes(get_option('themnific_url_portfolio'));?>"><i title="<?php _e('Back To Portfolio','themnific');?>"  class="fa fa-angle-double-up"></i></a>
         
-        <?php next_post_link('%link', '<i title="Next Project" class="icon-double-angle-right"></i>') ?>
+        <?php next_post_link('%link', '<i title="'.__('Next Project','themnific').'" class="fa fa-angle-double-right"></i>') ?>
 	
     </div>
     
@@ -33,44 +32,18 @@ $attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' =>
     
 		<?php if($project_url) : ?>
         
-        	<a class="tmnf-sc-button  silver xl" href="<?php echo $project_url; ?>"><?php _e('Visit Project','themnific');?> <i class="icon-signout"></i></a>
+        	<a class="mainbutton bigone" href="<?php echo $project_url; ?>"><?php _e('Visit Project','themnific');?> <i class="fa fa-sign-out"></i></a>
         
         <?php endif; ?>
         
         
-       	<?php if($project_issue) : ?>
-            
+       	<?php if($project_description) : ?>
+        
+            <div class="hrline"><span></span></div>
+    
             <p class="meta">
     
-                 <strong>Issue: </strong><br /><?php echo $project_issue; ?>
-            
-            </p>
-            
-        <?php endif; ?> 
-        
-       	<?php if($project_implication) : ?>
-            
-            <p class="meta">
-    
-                <strong>Implication: </strong><br /><?php echo $project_implication; ?>
-            
-            </p>
-            
-        <?php endif; ?>    
-        
-        <div class="meta">
-             
-				<strong>Solution: </strong><?php the_content(); ?>
-                                
-            
-        </div>
-   
-        
-       	<?php if($project_result) : ?>
-            
-            <p class="meta">
-    
-                 <strong>Result: </strong><br /><?php echo $project_result; ?>
+                <i class="fa fa-info-circle"></i> <?php echo $project_description; ?>
             
             </p>
             
@@ -78,10 +51,10 @@ $attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' =>
         
         <div class="hrline"><span></span></div>
         
-        <p class="meta"><i class="icon-time"></i> <?php the_time(get_option('date_format')); ?></p>
+        <p class="meta"><i class="fa fa-clock-o"></i> <?php the_time(get_option('date_format')); ?></p>
                 
 
-        <p class="meta"><i class="icon-copy"></i> <?php $terms_of_post = get_the_term_list( $post->ID, 'categories', '',' &bull; ', ' ', '' ); echo $terms_of_post; ?></p>
+        <p class="meta"><i class="fa fa-files-o"></i> <?php $terms_of_post = get_the_term_list( $post->ID, 'categories', '',' &bull; ', ' ', '' ); echo $terms_of_post; ?></p>
 
         <div class="hrline"><span></span></div>
             
@@ -92,18 +65,31 @@ $attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' =>
     
     <div id="foliocontent">   
             
-            <?php if($video_input) { echo ($video_input); 
+            <?php 
 			
+			if($featuredimage == 'No') {} else { 
 			
-            } elseif ($attachments) { echo get_template_part( '/includes/folio-types/gallery-slider' );
-
-
-			} else {
+				if($video_input) { echo ($video_input); 
 				
-				echo the_post_thumbnail('folio_slider' );
 				
-    		 }?> 
+				} elseif ($attachments) { echo get_template_part( '/includes/folio-types/gallery-slider' );
+	
+	
+				} else {the_post_thumbnail('folio_slider');}
+			
+			}
+			
+			?> 
             
+            <div class="entry entry_item">
+             
+				<?php the_content(); ?>
+                
+                <div class="hrline"><span></span></div>  
+                
+                <?php comments_template( '', true ); ?>
+            
+            </div>
   
      </div>
      

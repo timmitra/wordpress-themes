@@ -9,7 +9,7 @@
     
 		<?php $post = $posts[0]; if (is_category()) { ?>
         
-        	<h2 class="itemtitle"><?php single_cat_title(); ?> <!--<?php _e('Category','themnific');?>--></h2>
+        	<h2 class="itemtitle"><?php single_cat_title(); ?> <?php _e('Category','themnific');?></h2>
             
         <?php  } elseif( is_tag() ) { ?>
         

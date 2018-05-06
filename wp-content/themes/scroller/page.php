@@ -21,8 +21,8 @@
                    
                 <p class="meta sserif">
                 
-                  	<i class="icon-time"></i> <?php _e('on','themnific');?>  <?php the_time('F j'); ?> | 
-                  	<i class="icon-edit"></i> <?php _e('by','themnific');?> <?php the_author_posts_link(); ?>
+                  	<i class="fa fa-clock-o"></i> <?php _e('on','themnific');?>  <?php the_time('F j'); ?> &bull;  
+                  	<i class="fa fa-pencil-square-o"></i> <?php _e('by','themnific');?> <?php the_author_posts_link(); ?>
                 
                 </p>
 

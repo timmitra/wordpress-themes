@@ -15,33 +15,20 @@
                        		echo get_template_part( '/includes/post-types/gallery-slider' );
  					} else {
 							if ( has_post_thumbnail());
-						 		 the_post_thumbnail('folio', array('class' => 'main-single'));  
+						 		 the_post_thumbnail('format-single', array('class' => 'main-single'));  
 								
 			}?>
 			
-			<div style="clear: both;">
-			
-			<?php if ($post->ID == 2775) { ?>
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- 728 x 90 leaderboard -->
-			<ins class="adsbygoogle"
-				 style="display:inline-block;width:646px;height:80px"
-				 data-ad-client="ca-pub-0424968551452024"
-				 data-ad-slot="8262937498"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-			<?php } ?>
-			
-            </div>
+            <div style="clear: both;"></div>
             
             <h2 class="singletitle"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             
             <p class="meta">
             
-            	<i class="icon-file-alt"></i> <?php the_category(', ') ?>  &bull;  
+            	<i class="fa fa-file-o"></i> <?php the_category(', ') ?>  &bull;  
                 
-                <i class="icon-comments-alt"></i> <?php comments_popup_link( __('Comments (0)', 'themnific'), __('Comments (1)', 'themnific'), __('Comments (%)', 'themnific')); ?>
+                <i class="fa fa-comments-o"></i> <?php comments_popup_link( __('Comments (0)', 'themnific'), __('Comments (1)', 'themnific'), __('Comments (%)', 'themnific')); ?>
+                
             </p>
             
             <div class="hrline"><span></span></div>  
@@ -52,30 +39,28 @@
             
             	<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','themnific') . '</span>', 'after' => '</div>' ) ); ?>
             
-            	<?php get_template_part('/includes/mag-buttons');?>
-            
             	<div style="clear: both;"></div>
                 
                 <div class="hrline"><span></span></div>  
             
-                <p class="meta fl">
-                	<?php the_breadcrumb(); ?><br/>
-                    <i class="icon-time"></i> <span><?php _e('On','themnific');?></span> <?php the_time(get_option('date_format')); ?><br/>
-                    <i class="icon-edit"></i> <span><?php _e('By','themnific');?></span> <?php the_author_posts_link(); ?><br/>
-                    <?php the_tags( '<i class="icon-tags"></i>  ',', ',  ''); ?>
-                
-                </p>
-                
-            	<div style="clear: both;"></div>
-            
-            	<?php comments_template(); ?>
-            
-                <p>
-                <?php previous_post_link('<span class="fl" style="width:45%;">&laquo; %link</span>'); ?>
-                <?php next_post_link('<span class="fr" style="width:45%; text-align:right">%link &raquo;</span>'); ?>
-                </p>
             
             </div>
+            
+            <p class="meta fl">
+                <?php the_breadcrumb(); ?><br/>
+                <i class="fa fa-clock-o"></i> <span><?php _e('On','themnific');?></span> <?php the_time(get_option('date_format')); ?><br/>
+                <i class="fa fa-pencil-square-o"></i> <span><?php _e('By','themnific');?></span> <?php the_author_posts_link(); ?><br/>
+                <?php the_tags( '<i class="fa fa-tags"></i>  ',', ',  ''); ?>
+            
+            </p>
+            
+            <div style="clear: both;"></div>
+            <?php comments_template(); ?>
+        
+            <p>
+            <?php previous_post_link('<span class="fl" style="width:45%;">&laquo; %link</span>'); ?>
+            <?php next_post_link('<span class="fr" style="width:45%; text-align:right">%link &raquo;</span>'); ?>
+            </p>
 
 	<?php endwhile; else: ?>
 

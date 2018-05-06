@@ -13,7 +13,7 @@
             
 				<?php if(get_option('themnific_footer_left') == 'true'){
                     
-                    echo stripslashes(get_option('themnific_footer_left_text'));
+                    echo do_shortcode(get_option('themnific_footer_left_text'));
                     
                 } else { ?>
         
@@ -27,7 +27,7 @@
             
 				<?php if(get_option('themnific_footer_right') == 'true'){
                     
-                    echo stripslashes(get_option('themnific_footer_right_text'));
+                    echo do_shortcode(get_option('themnific_footer_right_text'));
                     
                 } else { ?>
                 

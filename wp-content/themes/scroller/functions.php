@@ -21,6 +21,8 @@ require_once ($includes_path . 'theme-options.php'); 					// Options panel setti
 require_once ($includes_path . 'theme-actions.php');					// Theme actions & user defined hooks
 require_once ($includes_path . 'theme-scripts.php'); 					// Load JavaScript via wp_enqueue_script
 
+if (get_option('themnific_slider_gallery') <> "false") {require_once ($functions_path . 'theme-gallery.php'); } // Replace [gallery] shortcode with slider
+
 
 //Add Custom Post Types
 require_once ($includes_path . 'posttypes/ptype-portfolio.php'); 		// portfolio post type
@@ -91,8 +93,14 @@ add_theme_support( 'woocommerce' );
 if ( function_exists('register_sidebar') ) 
 { 
 
-// sidebar widget
-register_sidebar(array('name' => 'Sidebar','before_widget' => '','after_widget' => '','before_title' => '<h2>','after_title' => '</h2>')); 
+	// sidebar widget
+	register_sidebar(array('name' => 'Sidebar','id' => 'sidebar-1','before_widget' => '','after_widget' => '','before_title' => '<h2>','after_title' => '</h2>')); 
+
+
+	//footer widgets
+	register_sidebar(array('name' => 'Footer 1','id' => 'footer-1','before_widget' => '','after_widget' => '','before_title' => '<h2 class="widget"><span>','after_title' => '</span></h2>'));   
+	register_sidebar(array('name' => 'Footer 2','id' => 'footer-2','before_widget' => '','after_widget' => '','before_title' => '<h2 class="widget"><span>','after_title' => '</span></h2>'));
+	register_sidebar(array('name' => 'Footer 3','id' => 'footer-3','before_widget' => '','after_widget' => '','before_title' => '<h2 class="widget"><span>','after_title' => '</span></h2>'));
 }
 
 // Make theme available for translation
@@ -137,12 +145,12 @@ function short_title($after = '', $length) {
 // icons - font awesome
 function tmnf_icon() {
 	
-	if(has_post_format('video')) {return '<i class="icon-play-circle"></i>';
-	}elseif(has_post_format('audio')) {return '<i class="icon-music"></i>';
-	}elseif(has_post_format('gallery')) {return '<i class="icon-picture"></i>';	
-	}elseif(has_post_format('link')) {return '<i class="icon-signout"></i>';	
-	}elseif(has_post_format('image')) {return '<i class="icon-camera"></i>';		
-	}elseif(has_post_format('quote')) {return '<i class="icon-quote-right"></i>';	
+	if(has_post_format('video')) {return '<i class="fa fa-play-circle"></i>';
+	}elseif(has_post_format('audio')) {return '<i class="fa fa-music"></i>';
+	}elseif(has_post_format('gallery')) {return '<i class="fa fa-picture-o"></i>';	
+	}elseif(has_post_format('link')) {return '<i class="fa fa-sign-out"></i>';	
+	}elseif(has_post_format('image')) {return '<i class="fa fa-camera"></i></i>';		
+	}elseif(has_post_format('quote')) {return '<i class="fa fa-quote-right"></i>';	
 	} else {'';}	
 	
 }
@@ -150,14 +158,13 @@ function tmnf_icon() {
 
 // icons ribbons - font awesome
 function tmnf_ribbon() {
-	
-	if(has_post_format('video')) {return '<span class="ribbon"></span><span class="ribbon_icon"><i class="icon-play-circle"></i></span>';
-	}elseif(has_post_format('audio')) {return '<span class="ribbon"></span><span class="ribbon_icon"><i class="icon-music"></i></span>';
-	}elseif(has_post_format('gallery')) {return '<span class="ribbon"></span><span class="ribbon_icon"><i class="icon-picture"></i></span>';
-	}elseif(has_post_format('link')) {return '<span class="ribbon"></span><span class="ribbon_icon"><i class="icon-signout"></i></span>';
-	}elseif(has_post_format('image')) {return '<span class="ribbon"></span><span class="ribbon_icon"><i class="icon-camera"></i></span>';
-	}elseif(has_post_format('quote')) {return '<span class="ribbon"></span><span class="ribbon_icon"><i class="icon-quote-right"></i></span>';
-	} else {'';}	
+	if(has_post_format('video')) {return '<span class="ribbon video-ribbon"></span><span class="ribbon_icon"><i class="fa fa-play-circle"></i></span>';
+	}elseif(has_post_format('audio')) {return '<span class="ribbon audio-ribbon"></span><span class="ribbon_icon"><i class="fa fa-microphone"></i></span>';
+	}elseif(has_post_format('gallery')) {return '<span class="ribbon gallery-ribbon"></span><span class="ribbon_icon"><i class="fa fa-picture-o"></i></span>';
+	}elseif(has_post_format('link')) {return '<span class="ribbon link-ribbon"></span><span class="ribbon_icon"><i class="fa fa-link"></i></span>';
+	}elseif(has_post_format('image')) {return '<span class="ribbon image-ribbon"></span><span class="ribbon_icon"><i class="fa fa-camera"></i></span>';
+	}elseif(has_post_format('quote')) {return '<span class="ribbon quote-ribbon"></span><span class="ribbon_icon"><i class="fa fa-quote-right"></i></span>';
+	} else {}	
 	
 }
 
@@ -206,8 +213,10 @@ function themnific_excerpt($text, $chars = 1620) {
 }
 
 function trim_excerpt($text) {
-  return rtrim($text,'[...]');
-}
+     $text = str_replace('[', '', $text);
+     $text = str_replace(']', '', $text);
+     return $text;
+    }
 add_filter('get_the_excerpt', 'trim_excerpt');
 
 
@@ -255,14 +264,37 @@ function pagination($prev = '&laquo;', $next = '&raquo;') {
     echo paginate_links( $pagination );
 };
 
-
+// get featured image on posts screen  
+function tmnf_get_featured_image($post_ID) {  
+    $post_thumbnail_id = get_post_thumbnail_id($post_ID);  
+    if ($post_thumbnail_id) {  
+        $post_thumbnail_img = wp_get_attachment_image_src($post_thumbnail_id, 'thumbnail');  
+        return $post_thumbnail_img[0];  
+    }  
+} 
+    // ADD NEW COLUMN  
+    function tmnf_columns_head($defaults) {  
+        $defaults['featured_image'] = 'Featured Image';  
+        return $defaults;  
+    }  
+    // SHOW THE FEATURED IMAGE  
+    function tmnf_columns_content($column_name, $post_ID) {  
+        if ($column_name == 'featured_image') {  
+            $post_featured_image = tmnf_get_featured_image($post_ID);  
+            if ($post_featured_image) {  
+                echo '<img style=" width:100px;" src="' . $post_featured_image . '" />';  
+            }  
+        }  
+    }  
+add_filter('manage_posts_columns', 'tmnf_columns_head');  
+add_action('manage_posts_custom_column', 'tmnf_columns_content', 10, 2); 
 
 //Breadcrumbs
 function the_breadcrumb() {
 	if (!is_home()) {
 
 		echo '<a href="'. home_url().'">';
-		echo '<i class="icon-home"></i> ';
+		echo '<i class="fa fa-home"></i> ';
 		echo "</a> &raquo; ";
 		if (is_category() || is_single()) {
 		the_category(', ');
@@ -275,6 +307,9 @@ function the_breadcrumb() {
 	}
 }
 
+// srcset hotfix
+function tmnf_disable_srcset( $sources ) {return false;}
+add_filter( 'wp_calculate_image_srcset', 'tmnf_disable_srcset' );
 
 /*function my_scripts_method() {
 	 // Register the style like this for a theme:
