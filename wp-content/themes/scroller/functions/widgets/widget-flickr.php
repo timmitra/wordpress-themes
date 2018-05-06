@@ -7,7 +7,7 @@ class flickr extends WP_Widget {
 	function flickr() {
 		$widget_ops = array('description' => 'This widget populates photos from a Flickr.' );
 
-		parent::WP_Widget(false, __('Themnific - Flickr', 'themnific'),$widget_ops);      
+		parent::__construct(false, __('Themnific - Flickr', 'themnific'),$widget_ops);      
 	}
 
 	function widget($args, $instance) {  

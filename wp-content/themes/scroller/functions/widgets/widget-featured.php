@@ -14,7 +14,7 @@ class tmnf_featured_widget extends WP_Widget {
 
 		$control_ops = array('id_base' => 'tmnf_featured_widget');
 
-		$this->WP_Widget('tmnf_featured_widget', 'Themnific - Featured', $widget_ops, $control_ops);
+		$this->__construct('tmnf_featured_widget', 'Themnific - Featured', $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)

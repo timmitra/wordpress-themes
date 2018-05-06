@@ -6,7 +6,7 @@ class SocialNetworks extends WP_Widget {
 
    function SocialNetworks() {
 	   $widget_ops = array('description' => 'This is Social Networks widget.' );
-       parent::WP_Widget(false, __('Themnific - Social Networks', 'themnific'),$widget_ops);      
+       parent::__construct(false, __('Themnific - Social Networks', 'themnific'),$widget_ops);      
    }
 
    function widget($args, $instance) {  
@@ -15,6 +15,7 @@ class SocialNetworks extends WP_Widget {
 	?>
 		<?php echo $before_widget; ?>
         <?php if ($title) { echo $before_title . esc_html( $title ) . $after_title; } ?>
+        	<div class="clearfix"></div> 
         	<?php get_template_part('/includes/uni-social'); ?>
             <div style="clear: both;"></div> 
 		<?php echo $after_widget; ?>   

@@ -14,7 +14,7 @@ class Facebook_Widget extends WP_Widget {
 
 		$control_ops = array('id_base' => 'facebook-like-widget');
 
-		$this->WP_Widget('facebook-like-widget', 'Themnific - Facebook Box', $widget_ops, $control_ops);
+		$this->__construct('facebook-like-widget', 'Themnific - Facebook Box', $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)

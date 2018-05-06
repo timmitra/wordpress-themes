@@ -7,7 +7,7 @@ class AdWidget_300 extends WP_Widget {
 
 	function AdWidget_300() {
 		$widget_ops = array('description' => 'Use this widget to add Ad as a widget.' );
-		parent::WP_Widget(false, __('Themnific - Ads Widget 300px', 'themnific'),$widget_ops);      
+		parent::__construct(false, __('Themnific - Ads Widget 300px', 'themnific'),$widget_ops);      
 	}
 
 	function widget($args, $instance) {  

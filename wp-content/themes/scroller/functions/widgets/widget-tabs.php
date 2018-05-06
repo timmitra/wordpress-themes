@@ -17,7 +17,7 @@ class tabs_widget extends WP_Widget {
 
 		$control_ops = array('id_base' => 'tabs_widget');
 
-		$this->WP_Widget('tabs_widget', 'Themnific - Tabs', $widget_ops, $control_ops);
+		$this->__construct('tabs_widget', 'Themnific - Tabs', $widget_ops, $control_ops);
 
 			if ( is_active_widget( false, false, $this->id_base, true ) ) {
 				wp_enqueue_script('tabs', get_template_directory_uri() .'/js/tabs.js','','', true);

@@ -7,7 +7,7 @@ class AdWidget125_left extends WP_Widget {
 
 	function AdWidget125_left() {
 		$widget_ops = array('description' => 'Use this widget to add any type of Ad as a widget.' );
-		parent::WP_Widget(false, __('Themnific - Ads 125px 4x', 'themnific'),$widget_ops);      
+		parent::__construct(false, __('Themnific - Ads 125px 4x', 'themnific'),$widget_ops);      
 	}
 
 	function widget($args, $instance) {  
