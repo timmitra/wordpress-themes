@@ -36,8 +36,8 @@
                 <?php } ?>
                 
 				<p>This site has been visited at least
-					<SCRIPT LANGUAGE ="JavaScript" src="http://www.it-guy.com/www.it-guy.com/thecount.js" ></SCRIPT>
-					<SCRIPT LANGUAGE ="php" src="http://www.it-guy.com/www.it-guy.com/jscount.php" ></SCRIPT>
+					<SCRIPT LANGUAGE ="JavaScript" src="https://www.it-guy.com/www.it-guy.com/thecount.js" ></SCRIPT>
+					<SCRIPT LANGUAGE ="php" src="https://www.it-guy.com/www.it-guy.com/jscount.php" ></SCRIPT>
 					<!--SCRIPT LANGUAGE ="Javascript" document.write(' offline ') ></SCRIPT-->
 					 times since March 2, 2000.
 				</p>

@@ -133,6 +133,8 @@ span.ribbon{-moz-border-radius: 2px;-khtml-border-radius: 2px;-webkit-border-rad
 
 .slant{ font-weight:normal; font-style:italic;}
 
+.opacity{ opacity:.6}
+
 .lower{ text-transform: lowercase !important}
 .italic{ font-style:italic !important}
 .fat{ font-weight:bold !important}
@@ -226,9 +228,10 @@ h4.leading{
 
 
 #header h1{
+	margin:10px 0;
 	float:left;
 	line-height:.9;
-	font-size:25px;
+	font-size:35px;
 	text-transform:uppercase;
 	letter-spacing:-3px;
 	display:block;
@@ -251,7 +254,11 @@ h4.leading{
 
 #header h1.hideme{display: none !important;}
 
-#header img{ float:left; max-width:100%;}
+#header img{ float:left; margin:0; height:29px;}
+
+.bigmenu h1{ margin:17px 0 !important;}
+
+.bigmenu h1 img{height:34px !important;}
 
 .bigmenu .scroll,
 .bigmenu .navi{right: 0;}
@@ -259,11 +266,13 @@ h4.leading{
 .bigmenu .scroll li,
 .bigmenu .navi li{ left:0;}
 
+.bigmenu>.scroll>li>a,
+.bigmenu>.navi>li>a{ padding: 10px 12px 7px 12px;}
 
 
 #header_bottom{ position:absolute; width:33%; left:0; bottom:0; overflow:hidden;z-index:9}
 
-.logo_bottom{ position:relative; right:0; top:0; height:100%;overflow:hidden; background:#fff; padding:0 0 0 0;opacity:1}
+.logo_bottom{ position:relative; right:0; top:0; height:100%;overflow:hidden; background:#10416f; padding:0 0 0 0;opacity:1}
 
 .logo_bottom img{ float:right; margin:20px 40px 0 0; overflow:hidden;}
 
@@ -326,12 +335,11 @@ ul.nav_classic li{left: 0;
 .scroll li a,
 .navi li a{
 	display: block;	
-	font-weight: ;
+	/*font-weight: ;*/
 	padding:20px 12px 17px 12px;
 	text-decoration: none;
 	border-bottom:none;
 	border-right:1px solid #fff;
-	text-transform:uppercase;
 }
 
 .scroll li:first-child a,
@@ -436,13 +444,15 @@ background-image: url(images/icons/minus.png);
 
 .section .container{ overflow:hidden; padding:80px 0; }
 
-.section_template .container{ overflow:hidden; padding:155px 0 75px 0;}
+.section_template .container{ overflow:hidden; padding:155px 2% 75px 2%;}
+
+#contact .container{padding:80px 2% 20px 2%;}
 
 .section>iframe{ float:left; margin:0; padding:0; width:100%;}
 
 
 .section .container h2,
-.section_template .container h2 { margin:15px 0 5px 0;padding:0 0 15px 0;letter-spacing:-0.07em !important;line-height:.8 !important;  }
+.section_template .container h2 { margin:15px 0 5px 0;padding:0 0 15px 0;letter-spacing:-0.11em !important;line-height:.8 !important;  }
 
 .section>.container>h2.head {float:left; margin:25px 5% 0 0; width:45%; }
 
@@ -457,7 +467,7 @@ background-image: url(images/icons/minus.png);
 
 #content,#sidebar{ margin-top:0; margin-bottom:0;}
 
-#sidebar{ background:none !important; margin-left:3.8% !important; width:28%;margin-right:0 !important; padding:0 !important;}
+#sidebar{ background:none !important; margin-left:3.8% !important; width:32%;margin-right:0 !important;}
 
 #foliocontent,#foliosidebar{ margin-top:0;}
 
@@ -486,7 +496,7 @@ ul.medpost li .mainbutton{ margin-top:18px; font-size:12px; font-weight:bold;}
 
 h2.singletitle{ margin:20px 0; letter-spacing: -0.09em !important; line-height:1;}
 
-.entry{margin:25px 0;}
+.entry{margin:15px 0;}
 
 .entry>ul{margin:0 0 25px 20px;}
 
@@ -502,7 +512,7 @@ h2.singletitle{ margin:20px 0; letter-spacing: -0.09em !important; line-height:1
 
 .entry p a:hover{ background:url(images/transparent-light.png);}
 
-.entry p{margin:0 0 15px 0;}
+.entry p{margin:0 0 10px 0;}
 
 .entryfull{margin:0 0 25px 0; overflow:hidden}
 
@@ -548,13 +558,13 @@ h2.singletitle{ margin:20px 0; letter-spacing: -0.09em !important; line-height:1
 
 ul.related{ float:left; width:105%; overflow: hidden; margin:5px 0 20px 0;}
 
-ul.related li{ position:relative; float:left; width:46%; margin:0 3.2% 25px 0;overflow: hidden; position:relative; height:120px; padding:0;}
+.related li{ position:relative; float:left; width:46%; margin:0 3.2% 25px 0;overflow: hidden; position:relative; height:120px; padding:0;}
 
-ul.related li h2{ font-size:10.5pt; line-height:14pt; margin:0; padding:0 10%; width:80%; text-align:center; background:none; letter-spacing:0; position:absolute; top:30%; left:0; }
+.related li h2{ font-size:10.5pt; line-height:14pt; margin:0; padding:0 10%; width:80%; text-align:center; background:none; letter-spacing:0; position:absolute; top:30%; left:0; }
 
-ul.related li a img { float:left; margin:0 20px 0 0; position:relative; z-index:1;}
+.related li a img { float:left; margin:0 20px 0 0; position:relative; z-index:1;}
 
-ul.related li .meta {margin:0 !important; width:auto; float:left;}
+.related li .meta {margin:0 !important; width:auto; float:left;}
 
 .archivecontent{padding:5px 10% 0 6% !important; min-height:340px;}
 
@@ -596,7 +606,7 @@ h2.itemtitle{ margin-bottom:30px; letter-spacing: -0.11em !important; line-heigh
 
 #foliosidebar .hrlineB{margin:0 0 15px 0;}
 
-#foliosidebar a.tmnf-sc-button{ margin:15px 2px 15px 2px; !important;}
+#foliosidebar a.tmnf-sc-button{ margin:15px 2px 15px 2px !important;}
 
 #foliocontent iframe{ width:100%; overflow:hidden;}
 
@@ -873,11 +883,10 @@ form#contactform fieldset input#submit{
  
 .searchform {
 	position: relative;
-	float: none;
-	clear:both;
+	float: left;
 	width:100%;
-	margin:0 0 0 0;
-	}
+	margin:0 0 0 25px;
+}
  
 .searchformhead input.s {
 	float: right;
@@ -893,7 +902,7 @@ form#contactform fieldset input#submit{
 	}
  
 .searchSubmit {
-	background: url(images/icons/search-submit.png) 2px 4px no-repeat;
+	background: url(images/icons/search-submit-inv.png) 2px 4px no-repeat;
 	position: absolute;
 	height: 24px;
 	width: 24px;
@@ -910,14 +919,14 @@ form#contactform fieldset input#submit{
 	margin:0 0 20px 0;
 	color:#999;
 	font-style:normal;
-	width:99.5%;
+	width:90%;
 	
 	
 	border: 1px solid #d9d9d9;
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.01);
-	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.01);
-	-moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.01);
-	-o-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.01);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03);
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03);
+	-moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03);
+	-o-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03);
   }
  
 .searchform .searchSubmit {
@@ -947,7 +956,7 @@ form#contactform fieldset input#submit{
 	float:none;
 	overflow:hidden;
 	width:100%;
-	margin-bottom:40px;
+	margin-bottom:30px;
 	}
 
 	
@@ -1009,7 +1018,7 @@ ul.ad125 li{ float:left; margin:0 18px 18px 0; padding:0; overflow:hidden; backg
 ul.ad125 li img{ float:left; margin:0; padding:0; overflow:hidden}
 
 
-img.ad300{margin:0 0 40px 0;background:url(images/transparent-light.png);}
+img.ad300{margin:0 0 20px 0;background:url(images/transparent-light.png);}
 
 img.adFree{ padding:0; margin:0 0 0 0; float:left; overflow:hidden}
 
@@ -1072,7 +1081,7 @@ ul.tweet_list li img {
 /* flickr */
 #sidebar h2 span.flickr,#footer h3 span.flickr,h2.widget span.flickr{ color: #0061D8; font-style:normal; }
  
-#sidebar h2 span span,#footer h3 span span,#archives h2 span span,h2.widget span span { color: #FF1183;}
+#sidebar h2 span span,#footer h3 span span,#archives h2 span span,h2.widget span span { color: #FF1183;font-size:12px; }
  
 .flickwrap {
 	position: relative;
@@ -1085,7 +1094,7 @@ ul.tweet_list li img {
 		float: left;
 		margin:0 !important;
 		padding: 0 !important;
-		width:67px; }
+		width:62px; }
  
  .flickr_badge_image{
 		float: left;
@@ -1262,7 +1271,7 @@ ul#serinfo {
 	}
  
 .tab-post {
-	height:100px;
+	height: 60px;
 	overflow:hidden;
 	background:url(images/line-h-l.png) bottom repeat-x;
 	margin:0 0 0 0;
@@ -1271,15 +1280,15 @@ ul#serinfo {
  
 .tab-post img {
 	padding:0;
-	margin: 0px 20px 10px 0 !important;
+	margin: 0px 12px 10px 0 !important;
 	float: left;}
 
 .tab-post a.tab-title {
 	letter-spacing: 0;
 	padding: 0;
-	margin:10px 0 5px 0 !important;
-	font-size: 14px !important;
-	overflow:hidden;}
+	margin:5px 0 5px 0 !important;
+	font-size: 14px !important 
+}
 	
 .tab-post .meta{
 	line-height:1 !important; margin-top:8px !important; }	
@@ -1347,7 +1356,8 @@ ul#serinfo {
 	}
  
 #copyright {
-	font-size: 8pt; overflow:hidden; }
+	font-size: 8pt; overflow:hidden; opacity:.7 
+}
  
 #copyright p {
 	margin: 0;
@@ -1375,12 +1385,13 @@ ul#serinfo {
 
 #servicesbox{ width:107%; overflow:hidden; padding:15px 0 0 1px;}
 
-#servicesbox li{float: left; /*border-top:5px solid #ddd; */padding:50px 30px 35px 30px; margin:45px 4% 60px 0;  position:relative;
+#servicesbox li{float: left; border-top:5px solid #ddd; padding:50px 30px 15px 30px; margin:45px 4% 35px 0;  width:22.6%; position:relative;
 	text-align:center;}
 
 .services h3{
 	padding:60px 0 12px 0;
 	margin:0 0 13px 0;
+	height:24px;
 	position:relative;
 	text-transform:uppercase;
 	letter-spacing: -0.03em;
@@ -1390,13 +1401,13 @@ ul#serinfo {
 .services h3 i{
 	position:absolute;
 	top:-110px;
-	left:50%;
+	left:47px;
 	font-size:50px;
 	font-weight:normal;
 	transition: all 300ms linear;
 	background:#fff;
 	width:140px;
-	height:140px;
+	height:40px;
 	margin:0 0 0 -70px;
 	line-height:.9 !important;
 	text-align:center;
@@ -1452,10 +1463,10 @@ ul#serinfo {
     color: #259add;
     text-shadow: 0px 0px 13px #fff;
 	top:-95px;
+	left:62px;
 	padding:35px 0 35px 0;
 	margin:0 0 0 -55px;
 	width:110px;
-	height:110px;
 }
 #servicesbox li h3{
     opacity: 1;
@@ -1481,13 +1492,13 @@ ul#serinfo {
 
 li.staff{float: left;padding:0; position:relative;text-align:center;margin:0 4% 35px 0; overflow:hidden;}
 	
-li.staff img{float: none; display:block; margin:0 auto 20px auto; max-width:100%;}
+li.staff img{float: left; margin:0 0 15px 0;}
 
 li.staff p{ margin:3px 0 5px 0;}
 
 ul.staff_social{ overflow:hidden; text-align:center; display:inline-block;}
 
-ul.staff_social li{ width:30px; height:30px; float:left; margin:8px 2px; padding:1px; display: inline; line-height:1; }
+ul.staff_social li{ width:28px; height:28px; float:left; margin:8px 2px; padding:1px; display: inline; line-height:1; }
 
 ul.staff_social li a{ width:30px; height:30px; float:left;margin:0; font-size:15px; padding:7px 6px;background:url(images/transparent-light.png);display: inline;}
 
@@ -1714,9 +1725,12 @@ ul.social-menu li {
 	position: relative;
 	line-height:1;
 	float: left;
+	width:34px !important;
+	height:34px !important;
 	margin: 0 10px 8px 0 !important;
 	padding:0 0 0 0;
 	overflow: hidden;
+	background:url(images/transparent-light.png);
 	text-align:center;
 }
 
@@ -1732,7 +1746,6 @@ ul.social-menu li a{
 	margin: 0 0 0 0 !important;
 	font-size:18px;
 	width:34px !important;
-	height:34px !important;
 	text-align:center;
 	padding:8px 0;
 	float:left;
@@ -2408,3 +2421,37 @@ div.pp_default .pp_description{ display:none !important}
 { text-transform: uppercase !important; letter-spacing:-0.025em}
 
 .admin-bar #header{ top:32px;}
+
+
+div.app-group.group {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
+div.app-group.group .app-content { 
+	padding: 15px;
+}
+
+img.app_icon {
+	height: 150px;
+	width: 150px;
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+a .app_icon {
+	height: 150px;
+	width: 150px;
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.app-name {
+	font-style: italic;
+}
+.app-group.group .app-content .app_name {
+	font-weight: bold;
+}
