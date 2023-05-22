@@ -366,7 +366,7 @@ function review_meta_save( $post_id ) {
 	//print_r($new);
 	
 	$meta_text_array = $_POST['_review-text'];
-	$meta_author_array = $_POST['_review-author'];
+	$meta_twitter_array = $_POST['_review-author'];
 	$meta_stars_array = $_POST['_review-stars'];
 	$meta_country_array = $_POST['_review-country'];
 	$meta_web_array = $_POST['_review-web'];
@@ -377,7 +377,7 @@ function review_meta_save( $post_id ) {
 	for ( $i = 0; $i < $count; $i++ ) {
 		if ( $meta_text_array[$i] != '' ) :
 			$new[$i]['_review-text'] = sanitize_text_field( $meta_text_array[$i]); // title
-			$new[$i]['_review-author'] = sanitize_text_field( $meta_author_array[$i] ); // author
+			$new[$i]['_review-author'] = sanitize_text_field( $meta_twitter_array[$i] ); // author
 			$new[$i]['_review-stars'] = sanitize_text_field( $meta_stars_array[$i] ); // stars
 			$new[$i]['_review-country'] = sanitize_text_field( $meta_country_array[$i] ); // linked in
 			$new[$i]['_review-web'] = sanitize_text_field( $meta_web_array[$i] ); // web site
@@ -404,5 +404,153 @@ if (!is_admin()) {
         wp_register_style('style-famfamfam-flags', get_bloginfo( 'stylesheet_directory' )."/css/famfamfam-flags.css");
         wp_enqueue_style( 'style-famfamfam-flags' );
 }
+
+/* GUESTS */
+
+function guest_custom_posttypes() {
+    
+    // Releases post type
+    $labels = array(
+        'name'               => 'Guests',
+        'singular_name'      => 'Guest',
+        'menu_name'          => 'Guests',
+        'name_admin_bar'     => 'Guest',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Guest',
+        'new_item'           => 'New Guest',
+        'edit_item'          => 'Edit Guest',
+        'view_item'          => 'View Guest',
+        'all_items'          => 'All Guests',
+        'search_items'       => 'Search Guests',
+        'parent_item_colon'  => 'Parent of Guest:',
+        'not_found'          => 'No Guest found.',
+        'not_found_in_trash' => 'No Guest found in Trash.',
+    );
+    
+    $args = array(
+        'labels'             => $labels, // loads $labels array above
+        'public'             => true,
+        'publicly_queryable' => true,
+        'exclude_from_search'=> false,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'menu_icon'          => 'dashicons-admin-comments',
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'guest' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 6,
+        'supports'           => array( 
+        	'title', 
+			'editor', 
+			'post-thumbnails',
+			'custom-fields',
+			'page-attributes',
+			'author',
+			'thumbnail',
+			'comments' )
+    );
+    register_post_type('guest', $args);
+    
+
+
+}
+add_action('init', 'guest_custom_posttypes');
+
+/**
+ * 1. Adds a meta box to the post editing screen
+ */
+function guest_custom_meta() {
+   // add_meta_box( 'sscore_meta', __( 'Meta Box Title', 'sscore-textdomain' ), 'sscore_meta_callback', 'post' );
+    add_meta_box( 'guest_meta', __( 'Guest Info', 'staff-textdomain' ), 'guest_meta_callback', 'guest', 'normal', 'high' );
+}
+add_action( 'add_meta_boxes', 'guest_custom_meta' );
+
+/**
+ * 2. Outputs the content of the meta box
+ */
+function guest_meta_callback( $post ) {
+    
+    wp_nonce_field( basename( __FILE__ ), 'guest_nonce' );
+    
+    $guest_stored_meta = get_post_meta($post->ID, 'guest_stored_meta', true);
+    
+    if (is_array( $guest_stored_meta ) ) {
+    
+		foreach ( $guest_stored_meta as $field ) {
+			//echo($field['_guest-tex']);
+		?>
+    
+    	<span>
+			<p>
+				<label for="_guest-text" class="guest-row-twitter"><?php _e( 'Twitter URL ', 'guest-twitter' )?></label>
+                <input type="text" name="_guest-twitter[]" id="_guest-twitter" value="<?php if ( isset ( $field['_guest-twitter'] ) ) { echo $field['_guest-twitter']; } ?>" />
+			</p>
+		</span>
+
+<?php 
+		}
+	} else {
+		// empty fields 
+		?>
+    	<span>
+			<p>
+				<label for="_guest-text" class="guest-row-twitter"><?php _e( 'Twitter URL ', 'guest-twitter' )?></label>
+                <input type="text" name="_guest-twitter[]" id="_guest-twitter" value="<?php if ( isset ( $field['_guest-twitter'] ) ) { echo $field['_guest-twitter']; } ?>" />
+			</p>
+		</span>
+
+		<?php
+	}
+
+} 
+
+
+
+/**
+ * Saves the custom meta input
+ */
+function guest_meta_save( $post_id ) {
+
+ 	if ( ! isset( $_POST['guest_nonce'] ) || !wp_verify_nonce( $_POST['guest_nonce'], basename( __FILE__ ) ) ) {
+		return;
+	}
+		
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'guest_nonce' ] ) && wp_verify_nonce( $_POST[ 'guest_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+ 	//echo $is_valid_nonce;
+ 	
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+ 
+    // Checks for input and sanitizes/saves if needed
+    $old = get_post_meta($post_id, 'guest_stored_meta', true);
+	$new = array();
+
+	$meta_twitter_array = $_POST['_guest-twitter'];
+	
+	$count = count( $meta_twitter_array );
+	//echo $count;
+	
+	for ( $i = 0; $i < $count; $i++ ) {
+		// check if twitter is missing
+		if ( $meta_twitter_array[$i] != '' ) :
+			$new[$i]['_guest-twitter'] = sanitize_text_field( $meta_twitter_array[$i] ); // twitter
+		endif;
+	}
+
+	if ( !empty( $new ) && $new != $old ) {
+		update_post_meta( $post_id, 'guest_stored_meta', $new );
+	} elseif ( empty($new) && $old ) {
+		delete_post_meta( $post_id, 'guest_stored_meta', $old );
+	}
+}
+
+add_action( 'save_post', 'guest_meta_save' );
 
 ?>
