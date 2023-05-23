@@ -2,7 +2,7 @@
 
 /* 
  * Plugin Name: MTJC Custom Post Types and Taxonomies.
- * Description: a plug to create custom post types and taxonomies.
+ * Description: a plug to create Host, Review, and Guest custom post types and taxonomies.
  * Version: 0.0.1
  * Author: Tim
  * License: GPL2
