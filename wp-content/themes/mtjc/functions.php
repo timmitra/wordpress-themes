@@ -337,6 +337,14 @@ function guest_meta_callback( $post ) {
 				<label for="_guest-text" class="guest-row-twitter"><?php _e( 'Twitter URL ', 'guest-twitter' )?></label>
                 <input type="text" name="_guest-twitter[]" id="_guest-twitter" value="<?php if ( isset ( $field['_guest-twitter'] ) ) { echo $field['_guest-twitter']; } ?>" />
 			</p>
+			<p>
+				<label for="_guest-bsky" class="guest-row-bsky"><?php _e( 'Bluesky Handle (e.g. user.bsky.social)', 'guest-bsky' )?></label>
+                <input type="text" name="_guest-bsky[]" id="_guest-bsky" value="<?php if ( isset ( $field['_guest-bsky'] ) ) { echo $field['_guest-bsky']; } ?>" />
+			</p>
+			<p>
+				<label for="_guest-mastodon" class="guest-row-mastodon"><?php _e( 'Mastodon URL (full URL)', 'guest-mastodon' )?></label>
+                <input type="text" name="_guest-mastodon[]" id="_guest-mastodon" value="<?php if ( isset ( $field['_guest-mastodon'] ) ) { echo $field['_guest-mastodon']; } ?>" />
+			</p>
 		</span>
 
 <?php 
@@ -347,7 +355,15 @@ function guest_meta_callback( $post ) {
     	<span>
 			<p>
 				<label for="_guest-text" class="guest-row-twitter"><?php _e( 'Twitter URL ', 'guest-twitter' )?></label>
-                <input type="text" name="_guest-twitter[]" id="_guest-twitter" value="<?php if ( isset ( $field['_guest-twitter'] ) ) { echo $field['_guest-twitter']; } ?>" />
+                <input type="text" name="_guest-twitter[]" id="_guest-twitter" value="" />
+			</p>
+			<p>
+				<label for="_guest-bsky" class="guest-row-bsky"><?php _e( 'Bluesky Handle (e.g. user.bsky.social)', 'guest-bsky' )?></label>
+                <input type="text" name="_guest-bsky[]" id="_guest-bsky" value="" />
+			</p>
+			<p>
+				<label for="_guest-mastodon" class="guest-row-mastodon"><?php _e( 'Mastodon URL (full URL)', 'guest-mastodon' )?></label>
+                <input type="text" name="_guest-mastodon[]" id="_guest-mastodon" value="" />
 			</p>
 		</span>
 
@@ -383,6 +399,8 @@ function guest_meta_save( $post_id ) {
 	$new = array();
 
 	$meta_twitter_array = $_POST['_guest-twitter'];
+	$meta_bsky_array = isset($_POST['_guest-bsky']) ? $_POST['_guest-bsky'] : array();
+	$meta_mastodon_array = isset($_POST['_guest-mastodon']) ? $_POST['_guest-mastodon'] : array();
 	
 	$count = count( $meta_twitter_array );
 	//echo $count;
@@ -391,6 +409,12 @@ function guest_meta_save( $post_id ) {
 		// check if twitter is missing
 		if ( $meta_twitter_array[$i] != '' ) :
 			$new[$i]['_guest-twitter'] = sanitize_text_field( $meta_twitter_array[$i] ); // twitter
+		endif;
+		if ( isset($meta_bsky_array[$i]) && $meta_bsky_array[$i] != '' ) :
+			$new[$i]['_guest-bsky'] = sanitize_text_field( $meta_bsky_array[$i] ); // bsky
+		endif;
+		if ( isset($meta_mastodon_array[$i]) && $meta_mastodon_array[$i] != '' ) :
+			$new[$i]['_guest-mastodon'] = sanitize_text_field( $meta_mastodon_array[$i] ); // mastodon
 		endif;
 	}
 
