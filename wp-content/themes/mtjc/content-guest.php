@@ -54,7 +54,7 @@
                     <?php if(isset($guest_bsky) && !empty($guest_bsky)) { ?>
                         <?php
                         $bsky_handle = $guest_bsky;
-                        if (!empty($bsky_handle) && !str_ends_with($bsky_handle, '.bsky.social')) {
+                        if (!empty($bsky_handle) && strpos($bsky_handle, '.') === false) {
                             $bsky_handle .= '.bsky.social';
                         }
                         ?>
