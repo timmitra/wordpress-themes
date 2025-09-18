@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "templateParts": [
+        {
+            "name": "header",
+            "title": "Header",
+            "area": "header",
+            "description": "Main site header."
+        }
+    ]
+}
