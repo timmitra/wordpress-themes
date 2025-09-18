@@ -41,7 +41,7 @@
                         <p class="meta"><?php echo ($guest_position); ?></p>
                 <?php } else {}?>
                        
-                <?php the_content(); ?>
+                <?php //the_content(); ?>
                 
                 <ul class="guest_social">
                 
