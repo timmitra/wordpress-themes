@@ -4,3 +4,7 @@ Author: Tim Mitra
 Version: 1.0
 Description: A custom block theme for WordPress.
 */
+
+.mainHeader {
+    background-image: url(images/bg1.png);
+}
