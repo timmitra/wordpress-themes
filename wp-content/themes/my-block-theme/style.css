@@ -8,3 +8,12 @@ Description: A custom block theme for WordPress.
 .mainHeader {
     background-image: url(images/bg1.png);
 }
+/* base font styles */
+body {
+    font-family: 'Inter', sans-serif  !important;
+    font-weight: 400;
+}
+h1, h2, h3 {
+    font-family: 'Quatrocentro', serif;
+    font-weight: 700;
+}
