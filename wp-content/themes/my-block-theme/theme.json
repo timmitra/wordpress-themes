@@ -44,6 +44,58 @@
             "background": true
         },
         "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "'Quattrocento', serif",
+                    "name": "Quattrocento",
+                    "slug": "quattrocento",
+                    "fontFace": [
+                        {
+                            "fontFamily": "'Quattrocento', serif",
+                            "fontStyle": "normal",
+                            "fontWeight": "400",
+                            "src": "url(https://fonts.gstatic.com/s/quattrocento/v24/OZpEg_xvsDZQL_LKIF7q4jP3zWj6XYvVuU4V.woff2) format('woff2')"
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "'Inter', sans-serif",
+                    "name": "Inter",
+                    "slug": "inter",
+                    "fontFace": [
+                        {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "normal",
+                            "fontWeight": "200",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        },
+                        {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "italic",
+                            "fontWeight": "200",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        },
+                        {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "normal",
+                            "fontWeight": "400",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        },
+                    {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "italic",
+                            "fontWeight": "400",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        },
+                        {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "normal",
+                            "fontWeight": "700",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        }
+                    ]
+                }
+            ],
             "fontSizes": [
                 {
                     "slug": "small",
