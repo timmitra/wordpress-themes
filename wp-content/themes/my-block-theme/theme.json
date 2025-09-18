@@ -1,6 +1,79 @@
 {
     "$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 2,
+    "settings": {
+        "appearanceTools": true,
+        "color": {
+            "defaultPalette": false,
+            "palette": [
+                {
+                    "slug": "Neutral",
+                    "color": "#989898",
+                    "name": "Neutral"
+                },
+                {
+                    "slug": "darkBlue",
+                    "color": "#10416f",
+                    "name": "Dark Blue"
+                },
+                {
+                    "slug": "mediumBlue",
+                    "color": "#497394",
+                    "name": "Medium Blue"
+                },
+                {
+                    "slug": "lightBlue",
+                    "color": "#90B2C4",
+                    "name": "Light Blue"
+                },
+                {
+                    "slug": "accentGold",
+                    "color": "#f2b11d",
+                    "name": "Accent Gold"
+                }
+            ],
+            "gradients": [
+            {
+                "name": "Blue to Gold",
+                "slug": "blue-to-gold",
+                "gradient": "linear-gradient(135deg, #10416f 0%, #f2b11d 100%)"
+            }
+            ],
+            "custom": true,
+            "link": true,
+            "background": true
+        },
+        "typography": {
+            "fontSizes": [
+                {
+                    "slug": "small",
+                    "size": "13px",
+                    "name": "Small"
+                },
+                {
+                    "slug": "normal",
+                    "size": "16px",
+                    "name": "Normal"
+                },
+                {
+                    "slug": "large",
+                    "size": "36px",
+                    "name": "Large"
+                },
+                {
+                    "slug": "larger",
+                    "size": "42px",
+                    "name": "Larger"
+                }
+            ],
+            "customFontSize": true,
+            "dropCap": true
+        },
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1200px"
+        }
+    },
     "templateParts": [
         {
             "name": "header",
