@@ -27,6 +27,7 @@ wp-content/themes/*
 #!wp-content/themes/sleandb/
 !wp-content/themes/lander/
 !wp-content/themes/mtjc/
+!wp-content/themes/my-block-theme
 !wp-content/themes/scroller/
 #!wp-content/plugins/score-meta-box/
 #!wp-content/plugins/ss-posttypes/
