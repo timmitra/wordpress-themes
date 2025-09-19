@@ -14,4 +14,11 @@ function my_block_theme_enqueue_styles() {
 
 add_action( 'wp_enqueue_scripts', 'my_block_theme_enqueue_styles' );
 
+// Enqueue editor styles.
+function enqueue_editor_styles() {
+    // Enqueue the editor styles for the block editor.
+    add_editor_style( 'style.css' );
+}
+add_action( 'admin_init', 'enqueue_editor_styles' );
+
 ?>
