@@ -2,6 +2,10 @@
     "$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 2,
     "settings": {
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1200px"
+        },
         "appearanceTools": true,
         "color": {
             "defaultPalette": false,
@@ -120,10 +124,6 @@
             ],
             "customFontSize": true,
             "dropCap": true
-        },
-        "layout": {
-            "contentSize": "800px",
-            "wideSize": "1200px"
         }
     },
     "styles": {
@@ -131,6 +131,10 @@
             "fontFamily": "inter",
             "fontSize": "18px",
             "lineHeight": "1.6"
+        },
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1200px"
         },
         "elements": {
             "heading": {
