@@ -9,8 +9,15 @@ Description: A custom block theme for WordPress.
     background-image: url(images/bg1.png);
     background-color: #10416f; /* fallback color */
     color: white; /* text color */
-    padding: 20px; /* padding around content */
+    padding: 1rem 0; /* padding top & bottom content */
+    font-family: 'Inter', sans-serif  !important;
 }
+/* header navigation link styles */
+.mainHeader .wp-block-navigation a {
+    color: white; /* link color */
+    font-weight: 600; /* semi-bold */
+}
+
 /* base font styles */
 body {
     font-family: 'Inter', sans-serif  !important;
