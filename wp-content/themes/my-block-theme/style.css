@@ -17,3 +17,23 @@ h1, h2, h3 {
     font-family: 'Quatrocentro', serif;
     font-weight: 700;
 }
+
+/* content width fixes */
+.entry-content, 
+.wp-block-post-content,
+.wp-block-group.is-layout-constrained {
+    max-width: 100% !important; /* allow content to span full width of container */
+    width: 100% !important; /* Make sure width expands to full width */
+}
+/* Ensure alignwide block cna reach 1200px */
+.wp-block-group.alignwide {
+    max-width: 1200px !important; /* Set max width for wide blocks */
+    width: 100% !important; /* Make sure width expands to full width */
+    margin-left: auto !important; /* Center align */
+    margin-right: auto !important;/* Center align */
+}
+wp-block-group.alignfull {
+    width: 100vw !important; /* full viewport width */
+    margin-left: 0 !important; /* Remove any left margin */
+    margin-right: 0 !important; /* Remove any right margin */
+}
