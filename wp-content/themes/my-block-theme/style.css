@@ -7,6 +7,9 @@ Description: A custom block theme for WordPress.
 
 .mainHeader {
     background-image: url(images/bg1.png);
+    background-color: #10416f; /* fallback color */
+    color: white; /* text color */
+    padding: 20px; /* padding around content */
 }
 /* base font styles */
 body {
