@@ -60,3 +60,45 @@ footer.mainFooter {
 .mainFooter .copyright {
     text-align: right;
 }
+
+/* post page styles */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 10rem;
+    padding: 0 1rem;
+}
+
+.sidebar {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* article */
+.main-layout > :first-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+/* sidebar */
+.main-layout > :last-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    /* article */
+    .main-layout > :first-child {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    /* sidebar */
+    .main-layout > :last-child {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+}
