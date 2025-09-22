@@ -47,3 +47,16 @@ wp-block-group.alignfull {
     margin-left: 0 !important; /* Remove any left margin */
     margin-right: 0 !important; /* Remove any right margin */
 }
+
+/* footer styles */
+footer.mainFooter {
+    background-color: #10416f; /* dark blue background */
+    color: white; /* white text */
+    padding: 2rem 1rem; /* padding top & bottom content */
+    position:relative;
+    width:100%;
+    bottom: 0;
+} 
+.mainFooter .copyright {
+    text-align: right;
+}
