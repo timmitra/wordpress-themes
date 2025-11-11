@@ -1,7 +1,11 @@
 {
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
 	"settings": {
 		"appearanceTools": true,
 		"color": {
+			"custom": true,
+			"defaultPalette": false,
 			"palette": [
 				{
 					"color": "#10416f",
