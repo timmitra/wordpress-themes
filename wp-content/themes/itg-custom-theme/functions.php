@@ -20,7 +20,7 @@ add_action( 'enqueue_block_assets', function() {
     );
 } );
 
-// register a custom style for core blocks
+// register a custom style for core block (fancy quote)
 add_action ( 'init', function() { // init loads before the block editor is initialized
     register_block_style(
         'core/quote', // block name
@@ -30,6 +30,20 @@ add_action ( 'init', function() { // init loads before the block editor is initi
             'style_handle' => 'theme-block-styles' // this should match the handle used in enqueueing the block styles
         )
     );
+} );
+
+// register a custom style for core blocks (fancy h2)
+add_action ( 'init', function() { // init loads before the block editor is initialized
+    foreach ( [ 'core/heading', 'core/post-title' ] as $block_name ) {
+        register_block_style(
+            $block_name, // block name
+            [
+                'name'  => 'fancy-h2-style', // unique name for the style
+                'label' => __( 'Fancy H2 style', 'itg-custom-theme' ), // human-readable label
+                'style_handle' => 'theme-block-styles', // this should match the handle used in enqueueing the block styles
+            ]
+        );
+    }
 } );
 
 ?>
