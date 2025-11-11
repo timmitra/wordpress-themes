@@ -14,15 +14,15 @@ add_action( 'wp_enqueue_scripts', function() {
 add_action( 'enqueue_block_assets', function() {
     wp_enqueue_style( 
         'theme-block-styles', 
-        get_template_directory_uri() . 'assets/css/block-styles.css', 
+        get_template_directory_uri() . '/assets/css/block-styles.css', 
         array(), 
-        filemtime( get_template_directory() . 'assets/css/block-styles.css' ) // version
+        filemtime( get_template_directory() . '/assets/css/block-styles.css' ) // version
     );
 } );
 
 // register a custom style for core blocks
 add_action ( 'init', function() { // init loads before the block editor is initialized
-    wp_register_block_style(
+    register_block_style(
         'core/quote', // block name
         array(
             'name'  => 'fancy-quote', // unique name for the style
