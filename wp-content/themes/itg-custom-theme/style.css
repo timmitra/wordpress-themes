@@ -14,3 +14,46 @@ Text Domain: itg-custom-theme
 Tags: 
 */
 
+/* Navigation */
+.navLg { display: none;}
+.navSmWrap { margin-right: 2rem !important; }
+.navSm rect { height: 3px; }
+/* Style for the hamburger menu icon */
+.navSmWrap .wp-block-navigation__responsive-container-open svg {
+    background-color: #90b2c4;
+    height: 28px;
+    padding: 0 3px;
+    border-radius: 3px;
+    margin-top: -8px;
+}
+.navSm ul {
+    width: 100%;
+    text-align: center;
+}
+.navSm ul li {
+    /*border-bottom: solid 1px #ccc;*/
+    display: block !important; /* Ensure list items stack vertically */
+    width: 100%;
+    padding: 5px 5px 5px 15px;
+}
+.navSm button.wp-wp.block-search__button {
+    background-color: #10416f !important;
+}
+.navSm :where(.wp-block-search__inside-wrapper) {
+border: none !important;
+text-align: center !important;
+}
+.navSm form {
+   margin: auto;
+}
+@media (min-width: 780px) {
+    .navSmWrap { display: none; }
+    .navLg { 
+        display: flex; /* Show large nav on wider screens */
+        padding-right: 2rem; 
+    } 
+    .menuWrapInner {
+        max-width: 1200px;
+        margin: auto !important;
+    }
+}
