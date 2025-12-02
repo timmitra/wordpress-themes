@@ -46,4 +46,40 @@ add_action ( 'init', function() { // init loads before the block editor is initi
     }
 } );
 
+// custom form for Contact Page 
+ function itg_custom_theme_contact_form_shortcode() {
+    ob_start(); // Start output buffering
+    ?>
+    <form action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post" class="itg-contact-form">
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+        <textarea id="message" name="message" placeholder="Please enter your message." required></textarea>
+        <input type="hidden" name="action" value="itg_custom_theme_handle_contact_form"> 
+        <button type="submit">Send</button> 
+    </form>
+    <?php
+    return ob_get_clean(); // Return the buffered content and clear the buffer 
+ }
+ add_shortcode( 'itg_contact_form', 'itg_custom_theme_contact_form_shortcode' ); 
+
+ // handle form submission
+ function itg_custom_theme_handle_contact_form() {
+    if ( isset( $_POST['name'], $_POST['email'], $_POST['message'] ) && is_email( $_POST['email'] ) ) {
+        $name = sanitize_text_field( $_POST['name'] );
+        $email = sanitize_email( $_POST['email'] );
+        $message = sanitize_textarea_field( $_POST['message'] );
+
+        $subject = 'New Contact Form Submission';
+        $body = "Name: $name\nEmail: $email\nMessage:\n$message";
+        wp_mail( 'support@it-guy.com', $subject, $body );
+
+        wp_safe_redirect( home_url( '/thank-you/' ) );
+        exit;
+    }
+
+    wp_safe_redirect( home_url( '/error/' ) );
+    exit;
+ }
+ add_action( 'admin_post_nopriv_itg_custom_theme_handle_contact_form', 'itg_custom_theme_handle_contact_form' ); // user not logged in
+ add_action( 'admin_post_itg_custom_theme_handle_contact_form', 'itg_custom_theme_handle_contact_form' ); // user logged in
 ?>

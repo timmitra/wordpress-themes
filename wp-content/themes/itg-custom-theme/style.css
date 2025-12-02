@@ -68,3 +68,27 @@ text-align: center !important;
     }
 }
 
+/* contact form  styles */ 
+.itg-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+    max-width: 600px;
+}
+.itg-contact-form input,
+.itg-contact-form textarea {
+    padding: .5rem;
+    font-size: 1rem;
+    font-family: var(--wp--preset--font-family--roboto ); 
+}  
+.itg-contact-form textarea {
+    height: 6rem; 
+}
+.itg-contact-form button {
+    background: var(--wp--preset--color--custom-i-tg-blue);
+    color: var(--wp--preset--color--custom-itg-really-lt-blue);;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+} 
