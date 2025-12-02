@@ -56,4 +56,15 @@ text-align: center !important;
         max-width: 1200px;
         margin: auto !important;
     }
+
+    /* Footer */
+    .footColWrap div {
+         border-bottom: none !important;
+    }
+    .footColWrap div:first-of-type > * ,
+    .footColWrap div:last-of-type > * {
+        text-align: left !important; 
+        justify-content: flex-start;
+    }
 }
+
