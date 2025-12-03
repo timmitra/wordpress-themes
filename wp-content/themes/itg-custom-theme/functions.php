@@ -82,4 +82,58 @@ add_action ( 'init', function() { // init loads before the block editor is initi
  }
  add_action( 'admin_post_nopriv_itg_custom_theme_handle_contact_form', 'itg_custom_theme_handle_contact_form' ); // user not logged in
  add_action( 'admin_post_itg_custom_theme_handle_contact_form', 'itg_custom_theme_handle_contact_form' ); // user logged in
+
+ // adding a custom block
+ // register a custom block (let WordPress read `block.json`)
+ function itg_custom_theme_register_blocks() {
+     register_block_type( get_template_directory() . '/blocks/newsletter-form' );
+ }
+ add_action( 'init', 'itg_custom_theme_register_blocks' );
+
+// handle newsletter form submission
+function itg_custom_theme_newsletter_signup() {
+    if ( isset( $_POST['email'] ) && is_email( $_POST['email'] ) ) {
+        $email = sanitize_email( $_POST['email'] );
+
+        // Here you would typically add the email to your newsletter list.
+        // For demonstration, we'll just send a confirmation email.
+
+        $subject = 'New Newsletter Signup';
+        $body = "Thank you for subscribing to our newsletter with the email: $email";
+        wp_mail( 'support@it-guy.com', $subject, "Email: $email" );
+
+        wp_safe_redirect( home_url( '/thank-you/' ) );
+        exit;
+    }
+    wp_safe_redirect( home_url( '/error/' ) );
+    exit;
+}
+add_action( 'admin_post_nopriv_itg_custom_theme_newsletter_signup', 'itg_custom_theme_newsletter_signup' ); // user not logged in
+add_action( 'admin_post_itg_custom_theme_newsletter_signup', 'itg_custom_theme_newsletter_signup' ); // user logged in
+
+// register styles and scripts for the custom block
+ function itg_custom_theme_register_block_assets() {
+    wp_register_script(
+        'itg-newsletter-editor',
+        get_template_directory_uri() . '/blocks/newsletter-form/block.js',
+        array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+        filemtime( get_template_directory() . '/blocks/newsletter-form/block.js' ),
+        true
+    );
+
+    wp_register_style(
+        'itg-newsletter-editor-style',
+        get_template_directory_uri() . '/blocks/newsletter-form/editor.css',
+        [],
+        filemtime( get_template_directory() . '/blocks/newsletter-form/editor.css' )
+    );
+
+    wp_register_style(
+        'itg-newsletter-style',
+        get_template_directory_uri() . '/blocks/newsletter-form/style.css',
+        [],
+        filemtime( get_template_directory() . '/blocks/newsletter-form/style.css' )
+    );
+}
+ add_action( 'init', 'itg_custom_theme_register_block_assets' ); 
 ?>
