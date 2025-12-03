@@ -92,3 +92,14 @@ text-align: center !important;
     font-size: 1rem;
     cursor: pointer;
 } 
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    margin-bottom: 0px;
+}
