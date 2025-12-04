@@ -1,4 +1,4 @@
-== iTG Custom Theme ==
+== SW Custom Theme ==
 
 Contributors: Tim Mitra
 Requires at least: 6.8
