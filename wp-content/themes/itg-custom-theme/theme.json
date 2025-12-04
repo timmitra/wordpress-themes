@@ -30,7 +30,7 @@
 			]
 		},
 		"layout": {
-			"contentSize": "620px",
+			"contentSize": "960px",
 			"wideSize": "1000px"
 		},
 		"spacing": {
@@ -162,6 +162,14 @@
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--roboto)"
 				}
+			}
+		},
+		"spacing": {
+			"padding": {
+				"bottom": "0px",
+				"left": "1rem",
+				"right": "1rem",
+				"top": "0px"
 			}
 		},
 		"typography": {
