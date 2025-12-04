@@ -46,6 +46,14 @@ text-align: center !important;
 .navSm form {
    margin: auto;
 }
+
+/* Recipe details */
+ .recipeDetails .ingredients {
+    border-bottom: solid 1px var(--wp--preset--color--custom-i-tg-blue);
+    border-right: none;
+    padding-bottom: 2rem;
+ }
+
 @media (min-width: 780px) {
     .navSmWrap { display: none; }
     .navLg { 
@@ -57,7 +65,12 @@ text-align: center !important;
         margin: auto !important;
     }
 
-
+    /* Recipe details */
+    .recipeDetails .ingredients {
+        border-bottom: none;
+        border-right: solid 1px var(--wp--preset--color--custom-i-tg-blue);
+    }
+ 
     /* Footer */
     .footColWrap div {
          border-bottom: none !important;
@@ -126,3 +139,4 @@ footer {
     margin-bottom: 0px;
 }
     */
+
