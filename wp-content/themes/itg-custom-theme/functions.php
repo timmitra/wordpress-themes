@@ -10,6 +10,17 @@ add_action( 'wp_enqueue_scripts', function() {
     );
 } );
 
+// enqueue font awesome from CDN
+function itg_enqueue_font_awesome() {
+    wp_enqueue_style(
+        'font-awesome', // unique handle for the stylesheet
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', // CDN URL for Font Awesome
+        array(), // dependencies (leave empty if none)
+        '6.  5.0' // version of Font Awesome
+    );
+} 
+add_action( 'wp_enqueue_scripts', 'itg_enqueue_font_awesome' );
+
 // enqueue block styles
 add_action( 'enqueue_block_assets', function() {
     wp_enqueue_style( 
