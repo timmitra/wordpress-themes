@@ -21,8 +21,8 @@ A custom block theme
 
 == Copyright ==
 
-iTG Custom Theme WordPress Theme, (C) 2025 Tim Mitra
-iTG Custom Theme is distributed under the terms of the GNU GPL.
+Senziente Wines Custom Theme WordPress Theme, (C) 2025 Tim Mitra
+Senziente Wines Custom Theme is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

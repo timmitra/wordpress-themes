@@ -1,4 +1,4 @@
-wp.blocks.registerBlockType('itg-custom-theme/newsletter-form', {
+wp.blocks.registerBlockType('sw-custom-theme/newsletter-form', {
     edit: function() { // Rendered in the editor interface, not real
         return wp.element.createElement(
             'form',

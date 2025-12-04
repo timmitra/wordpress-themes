@@ -1,6 +1,6 @@
 {
     "apiVersion": 2,
-    "name": "itg-custom-theme/newsletter-form",
+    "name": "sw-custom-theme/newsletter-form",
     "title": "Newsletter Signup",
     "category": "widgets",
     "icon": "email",
@@ -8,8 +8,8 @@
     "supports": {
         "html": false
     }, 
-    "editorScript": "itg-newsletter-editor",
-    "editorStyle": "itg-newsletter-editor-style",
-    "style": "itg-newsletter-style",
+    "editorScript": "sw-newsletter-editor",
+    "editorStyle": "sw-newsletter-editor-style",
+    "style": "sw-newsletter-style",
     "render": "render.php"
 } 

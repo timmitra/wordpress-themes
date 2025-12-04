@@ -9,23 +9,23 @@
 			"palette": [
 				{
 					"color": "#10416f",
-					"name": "iTG Blue",
-					"slug": "custom-i-tg-blue"
+					"name": "SW Blue",
+					"slug": "custom-sw-blue"
 				},
 				{
 					"color": "#497394",
-					"name": "ITG Med Blue",
-					"slug": "custom-itg-med-blue"
+					"name": "SW Med Blue",
+					"slug": "custom-sw-med-blue"
 				},
 				{
 					"color": "#90b2c4",
-					"name": "iTG Lt Blue",
-					"slug": "custom-i-tg-lt-blue"
+					"name": "SW Lt Blue",
+					"slug": "custom-sw-lt-blue"
 				},
 				{
 					"color": "#dcf0fa",
-					"name": "ITG Really Lt Blue",
-					"slug": "custom-itg-really-lt-blue"
+					"name": "SW Really Lt Blue",
+					"slug": "custom-sw-really-lt-blue"
 				}
 			]
 		},
@@ -118,13 +118,13 @@
 	},
 	"styles": {
 		"color": {
-			"background": "var(--wp--preset--color--custom-itg-really-lt-blue)",
+			"background": "var(--wp--preset--color--custom-sw-really-lt-blue)",
 			"text": "var(--wp--preset--color--custom-i-tg-blue)"
 		},
 		"elements": {
 			"button": {
 				"color": {
-					"background": "var(--wp--preset--color--custom-i-tg-blue)"
+					"background": "var(--wp--preset--color--custom-sw-blue)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--roboto)",
@@ -134,7 +134,7 @@
 			},
 			"caption": {
 				"color": {
-					"text": "var(--wp--preset--color--custom-i-tg-blue)"
+					"text": "var(--wp--preset--color--custom-sw-blue)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--alice)"
@@ -142,7 +142,7 @@
 			},
 			"heading": {
 				"color": {
-					"text": "var(--wp--preset--color--custom-i-tg-blue)"
+					"text": "var(--wp--preset--color--custom-sw-blue)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--roboto)",
@@ -153,11 +153,11 @@
 			"link": {
 				":hover": {
 					"color": {
-						"text": "var(--wp--preset--color--custom-i-tg-blue)"
+						"text": "var(--wp--preset--color--custom-sw-blue)"
 					}
 				},
 				"color": {
-					"text": "var(--wp--preset--color--custom-itg-med-blue)"
+					"text": "var(--wp--preset--color--custom-sw-med-blue)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--roboto)"
