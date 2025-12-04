@@ -1,7 +1,7 @@
  <?php
 
 // register a pattern category for the theme
-function sw_custom_theme_register_block_ patterns() {
+function sw_custom_theme_register_block_patterns() {
     $base = get_template_directory() . '/patterns/ ';
 
     register_block_pattern (
