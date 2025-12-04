@@ -57,6 +57,7 @@ text-align: center !important;
         margin: auto !important;
     }
 
+
     /* Footer */
     .footColWrap div {
          border-bottom: none !important;
@@ -66,8 +67,28 @@ text-align: center !important;
         text-align: left !important; 
         justify-content: flex-start;
     }
-}
+} /* end of media query */
 
+.menuWrap {
+    position: relative; 
+    z-index: 20;
+    box-shadow: 0 0 4px #10416f,
+                0 0 8px #10416f;
+} 
+
+/* Hero image */ 
+.heroWrap {
+    position: absolute;
+    top: 0;
+    z-index: 0; 
+    width: 100%;
+    padding-top: 200px !important; 
+    padding-bottom: 4rem !important;
+    } 
+
+.wp-block-seperator {
+border-width: 1px;
+}
 /* contact form  styles */ 
 .itg-contact-form {
     display: flex;
@@ -93,6 +114,7 @@ text-align: center !important;
     cursor: pointer;
 } 
 
+/*
 body {
     min-height: 100vh;
     display: flex;
@@ -103,3 +125,4 @@ footer {
     margin-top: auto;
     margin-bottom: 0px;
 }
+    */
