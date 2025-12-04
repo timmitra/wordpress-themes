@@ -2,7 +2,7 @@
 
 // register a pattern category for the theme
 function itg_custom_theme_register_block_patterns() {
-    $base = get_template_directory() . '/patterns/ ';
+    $base = get_template_directory() . '/patterns/';
 
     register_block_pattern (
         'itg_custom_theme/recipe-details',
