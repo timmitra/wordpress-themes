@@ -147,4 +147,7 @@ add_action( 'admin_post_itg_custom_theme_newsletter_signup', 'itg_custom_theme_n
     );
 }
  add_action( 'init', 'itg_custom_theme_register_block_assets' ); 
+
+ // include patterns.php
+require get_template_directory() . '/patterns.php';
 ?>
