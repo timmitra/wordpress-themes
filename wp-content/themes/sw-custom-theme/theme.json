@@ -1,6 +1,4 @@
 {
-	"version": 3,
-	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
 	"settings": {
 		"appearanceTools": true,
 		"color": {
@@ -110,6 +108,21 @@
 					"fontFamily": "Roboto, sans-serif",
 					"name": "Roboto",
 					"slug": "roboto"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Charm",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/charm/charm-400-normal.woff2"
+							]
+						}
+					],
+					"fontFamily": "Charm, cursive",
+					"name": "Charm",
+					"slug": "charm"
 				}
 			],
 			"fontSizes": []
