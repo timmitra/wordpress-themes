@@ -8,14 +8,14 @@
 			"defaultPalette": false,
 			"palette": [
 				{
-					"color": "#10416f",
-					"name": "SW Blue",
-					"slug": "custom-sw-blue"
+					"color": "#96140c",
+					"name": "SW Red",
+					"slug": "custom-sw-red"
 				},
 				{
-					"color": "#497394",
-					"name": "SW Med Blue",
-					"slug": "custom-sw-med-blue"
+					"color": "#d6ab39",
+					"name": "SW Gold",
+					"slug": "custom-sw-gold"
 				},
 				{
 					"color": "#90b2c4",
@@ -124,7 +124,7 @@
 		"elements": {
 			"button": {
 				"color": {
-					"background": "var(--wp--preset--color--custom-sw-blue)"
+					"background": "var(--wp--preset--color--custom-sw-red)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--roboto)",
@@ -134,7 +134,7 @@
 			},
 			"caption": {
 				"color": {
-					"text": "var(--wp--preset--color--custom-sw-blue)"
+					"text": "var(--wp--preset--color--custom-sw-red)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--alice)"
@@ -142,7 +142,7 @@
 			},
 			"heading": {
 				"color": {
-					"text": "var(--wp--preset--color--custom-sw-blue)"
+					"text": "var(--wp--preset--color--custom-sw-red)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--roboto)",
@@ -153,11 +153,11 @@
 			"link": {
 				":hover": {
 					"color": {
-						"text": "var(--wp--preset--color--custom-sw-blue)"
+						"text": "var(--wp--preset--color--custom-sw-red)"
 					}
 				},
 				"color": {
-					"text": "var(--wp--preset--color--custom-sw-med-blue)"
+					"text": "var(--wp--preset--color--custom-sw-gold)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--roboto)"
