@@ -7,7 +7,7 @@ Description: A custom block theme
 Requires at least: 6.8
 Tested up to: 6.8
 Requires PHP: 5.7
-Version: 0.0.4
+Version: 0.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sw-custom-theme
@@ -45,6 +45,25 @@ text-align: center !important;
 }
 .navSm form {
    margin: auto;
+}
+
+/* QR code stack - two images */
+.qr-stack {
+    position: relative;
+    display: inline-block; /* shrinkwrap to image size */
+}
+
+.qr-stack .under-qr-code {
+    position: relative; /* base image in normal flow */
+    z-index: 1;
+    display: block;
+}
+
+.qr-stack .qr-code {
+    position: absolute; /* overlay the top image */
+    bottom: 0; /* align to bottom of the under image */
+    left: 0;   /* align to left of the under image */
+    z-index: 20;
 }
 
 /* Recipe details */
