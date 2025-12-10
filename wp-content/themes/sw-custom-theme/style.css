@@ -73,11 +73,6 @@ text-align: center !important;
     padding-bottom: 2rem;
  }
 
- /* Front page */
- .front-page-title {
-    white-space: nowrap;
- }
-
 @media (min-width: 780px) {
     .navSmWrap { display: none; }
     .navLg { 
@@ -87,6 +82,12 @@ text-align: center !important;
     .menuWrapInner {
         max-width: 1200px;
         margin: auto !important;
+    }
+    
+    /* Front Page Title */
+    .front-page-title {
+     	font-size: 60px !important;
+     	 white-space: nowrap;
     }
 
     /* Recipe details */
