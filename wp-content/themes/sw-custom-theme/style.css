@@ -7,7 +7,7 @@ Description: A custom block theme
 Requires at least: 6.8
 Tested up to: 6.8
 Requires PHP: 5.7
-Version: 0.0.5
+Version: 0.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sw-custom-theme
@@ -71,6 +71,11 @@ text-align: center !important;
     border-bottom: solid 1px var(--wp--preset--color--custom-i-tg-blue);
     border-right: none;
     padding-bottom: 2rem;
+ }
+
+ /* Front page */
+ .front-page-title {
+    white-space: nowrap;
  }
 
 @media (min-width: 780px) {
