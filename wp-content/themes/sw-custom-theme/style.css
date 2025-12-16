@@ -20,11 +20,10 @@ Tags:
 .navSm rect { height: 3px; }
 /* Style for the hamburger menu icon */
 .navSmWrap .wp-block-navigation__responsive-container-open svg {
-    background-color: #90b2c4;
+    background-color: var(--wp--preset--color--custom-sw-gold);
     height: 28px;
     padding: 0 3px;
     border-radius: 3px;
-    margin-top: -8px;
 }
 .navSm ul {
     width: 100%;
@@ -47,6 +46,15 @@ text-align: center !important;
    margin: auto;
 }
 
+.wp-block-site-title a {
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.wp-block-site-logo {
+    width: 50px;
+}
 /* QR code stack - two images */
 .qr-stack {
     position: relative;
@@ -73,6 +81,13 @@ text-align: center !important;
     padding-bottom: 2rem;
  }
 
+ /* Front Page Title */
+.front-page-title p {
+    font-size: 60px !important;
+        white-space: nowrap;
+        text-align: center;
+}
+
 @media (min-width: 780px) {
     .navSmWrap { display: none; }
     .navLg { 
@@ -85,8 +100,8 @@ text-align: center !important;
     }
     
     /* Front Page Title */
-    .front-page-title {
-     	font-size: 60px !important;
+    .front-page-title p {
+     	font-size: 85px !important;
      	 white-space: nowrap;
     }
 
