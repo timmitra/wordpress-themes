@@ -74,6 +74,14 @@ text-align: center !important;
     z-index: 20;
 }
 
+.qr-stack .qr-code-right {
+    position: absolute; /* overlay the top image */
+    bottom: 0; /* align to bottom of the under image */
+    right: 0;   /* align to right of the under image */
+    z-index: 20;
+}
+
+
 /* Recipe details */
  .recipeDetails .ingredients {
     border-bottom: solid 1px var(--wp--preset--color--custom-i-tg-blue);
@@ -86,6 +94,30 @@ text-align: center !important;
     font-size: 60px !important;
         white-space: nowrap;
         text-align: center;
+}
+
+/* Contact 7 form */
+.wpcf7-form {
+	/*padding: px;*/
+}
+
+.wpcf7-form.init p {
+	color: var(--wp--preset--color--custom-sw-red);
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea
+{
+    background-color: var(--wp--preset--color--custom-sw-lt-gold);
+    color: #000;
+    /*font-size: 0.75rem !important;*/
+}
+
+.wpcf7-submit {
+	color: var(--wp--preset--color--custom-sw-red) !important;
+	font-size: 1rem !important;
+	background-color: var(--wp--preset--color--custom-sw-gold);
 }
 
 @media (min-width: 780px) {
