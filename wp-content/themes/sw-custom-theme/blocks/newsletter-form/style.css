@@ -1,0 +1,26 @@
+/* newsletter signup form styles */
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    max-width: 250px;
+} 
+
+.newsletter-form button {
+    padding: 0.6rem 1rem;
+    background-color: var(--wp--preset--color--custom-sw-gold);
+    color: var(--wp--preset--color--custom-sw-red);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}  

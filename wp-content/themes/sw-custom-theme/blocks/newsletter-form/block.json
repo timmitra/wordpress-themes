@@ -1,0 +1,15 @@
+{
+    "apiVersion": 2,
+    "name": "sw-custom-theme/newsletter-form",
+    "title": "Newsletter Signup",
+    "category": "widgets",
+    "icon": "email",
+    "description": "A simple newsletter signup form.",
+    "supports": {
+        "html": false
+    }, 
+    "editorScript": "sw-newsletter-editor",
+    "editorStyle": "sw-newsletter-editor-style",
+    "style": "sw-newsletter-style",
+    "render": "render.php"
+} 

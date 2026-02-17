@@ -1,0 +1,209 @@
+{
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"custom": true,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"color": "#96140c",
+					"name": "SW Red",
+					"slug": "custom-sw-red"
+				},
+				{
+					"color": "#d6ab39",
+					"name": "SW Gold",
+					"slug": "custom-sw-gold"
+				},
+				{
+					"color": "#FCEDC6",
+					"name": "SW Lt Gold",
+					"slug": "custom-sw-lt-gold"
+				},
+				{
+					"color": "#90b2c4",
+					"name": "SW Lt Blue",
+					"slug": "custom-sw-lt-blue"
+				},
+				{
+					"color": "#fbf4f3",
+					"name": "SW Really Lt Red",
+					"slug": "custom-sw-really-lt-red"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "960px",
+			"wideSize": "1000px"
+		},
+		"spacing": {
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw"
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+					"name": "System Font",
+					"slug": "system-font"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Charm",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/charm/charm-400-normal.woff2"
+							]
+						}
+					],
+					"fontFamily": "Sacramento, cursive",
+					"name": "Sacramento",
+					"slug": "sacramento"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Alice",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/alice/alice-400-normal.woff2"
+							]
+						}
+					],
+					"fontFamily": "Alice, serif",
+					"name": "Alice",
+					"slug": "alice"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Roboto",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/roboto/roboto-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/roboto/roboto-700-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/roboto/roboto-400-italic.woff2"
+							]
+						}
+					],
+					"fontFamily": "Roboto, sans-serif",
+					"name": "Roboto",
+					"slug": "roboto"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Charm",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/charm/charm-400-normal.woff2"
+							]
+						}
+					],
+					"fontFamily": "Charm, cursive",
+					"name": "Charm",
+					"slug": "charm"
+				}
+			],
+			"fontSizes": []
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--custom-sw-really-lt-blue)",
+			"text": "var(--wp--preset--color--custom-i-tg-blue)"
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--custom-sw-red)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--roboto)",
+					"fontStyle": "normal",
+					"fontWeight": "700"
+				}
+			},
+			"caption": {
+				"color": {
+					"text": "var(--wp--preset--color--custom-sw-red)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--alice)"
+				}
+			},
+			"heading": {
+				"color": {
+					"text": "var(--wp--preset--color--custom-sw-red)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--roboto)",
+					"fontStyle": "normal",
+					"fontWeight": "700"
+				}
+			},
+			"link": {
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--custom-sw-red)"
+					}
+				},
+				"color": {
+					"text": "var(--wp--preset--color--custom-sw-gold)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--roboto)"
+				}
+			}
+		},
+		"spacing": {
+			"padding": {
+				"bottom": "0px",
+				"left": "1rem",
+				"right": "1rem",
+				"top": "0px"
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--roboto)"
+		}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header"
+		},
+		{
+			"area": "footer",
+			"name": "footer"
+		}
+	],
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json"
+}

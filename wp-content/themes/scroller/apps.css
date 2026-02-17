@@ -1,0 +1,39 @@
+.app_name {
+	font-weight: bold;
+}
+
+.app_featured {
+	font-weight: bold;
+	color: rgb(145,178,195);
+}
+
+.app-content a {
+	font-weight: bold;
+	background-color: #FFF;
+}
+
+.app_icon {
+	float: left;
+	text-align: left;
+	margin-right: 10px;
+	width: 80px;
+	height: 80px;
+}
+
+.product-jump img {
+	float: left;
+	text-align: left;
+	margin-right: 10px;
+	width: 80px;
+	height: 80px;
+}
+
+.product-jump a {
+	color: black;
+}
+
+.app-group.group {
+	float: left;
+	background-color: #FFF;
+	padding:  10px 10px 10px 10px;
+}

@@ -1,0 +1,162 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "settings": {
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1200px"
+        },
+        "appearanceTools": true,
+        "color": {
+            "defaultPalette": false,
+            "palette": [
+                {
+                    "slug": "Neutral",
+                    "color": "#989898",
+                    "name": "Neutral"
+                },
+                {
+                    "slug": "darkBlue",
+                    "color": "#10416f",
+                    "name": "Dark Blue"
+                },
+                {
+                    "slug": "mediumBlue",
+                    "color": "#497394",
+                    "name": "Medium Blue"
+                },
+                {
+                    "slug": "lightBlue",
+                    "color": "#90B2C4",
+                    "name": "Light Blue"
+                },
+                {
+                    "slug": "accentGold",
+                    "color": "#f2b11d",
+                    "name": "Accent Gold"
+                }
+            ],
+            "gradients": [
+            {
+                "name": "Blue to Gold",
+                "slug": "blue-to-gold",
+                "gradient": "linear-gradient(135deg, #10416f 0%, #f2b11d 100%)"
+            }
+            ],
+            "custom": true,
+            "link": true,
+            "background": true
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "'Quattrocento', serif",
+                    "name": "Quattrocento",
+                    "slug": "quattrocento",
+                    "fontFace": [
+                        {
+                            "fontFamily": "'Quattrocento', serif",
+                            "fontStyle": "normal",
+                            "fontWeight": "400",
+                            "src": "url(https://fonts.gstatic.com/s/quattrocento/v24/OZpEg_xvsDZQL_LKIF7q4jP3zWj6XYvVuU4V.woff2) format('woff2')"
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "'Inter', sans-serif",
+                    "name": "Inter",
+                    "slug": "inter",
+                    "fontFace": [
+                        {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "normal",
+                            "fontWeight": "200",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        },
+                        {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "italic",
+                            "fontWeight": "200",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        },
+                        {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "normal",
+                            "fontWeight": "400",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        },
+                    {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "italic",
+                            "fontWeight": "400",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        },
+                        {
+                            "fontFamily": "'Inter', sans-serif",
+                            "fontStyle": "normal",
+                            "fontWeight": "700",
+                            "src": "url(https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwkT9mI1F55MKw.woff2) format('woff2')"
+                        }
+                    ]
+                }
+            ],
+            "fontSizes": [
+                {
+                    "slug": "small",
+                    "size": "13px",
+                    "name": "Small"
+                },
+                {
+                    "slug": "normal",
+                    "size": "16px",
+                    "name": "Normal"
+                },
+                {
+                    "slug": "large",
+                    "size": "36px",
+                    "name": "Large"
+                },
+                {
+                    "slug": "larger",
+                    "size": "42px",
+                    "name": "Larger"
+                }
+            ],
+            "customFontSize": true,
+            "dropCap": true
+        }
+    },
+    "styles": {
+        "typography": {
+            "fontFamily": "inter",
+            "fontSize": "18px",
+            "lineHeight": "1.6"
+        },
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1200px"
+        },
+        "elements": {
+            "heading": {
+                "typography": {
+                    "fontFamily": "quattrocento",
+                    "fontWeight": "700",
+                    "lineHeight": "1.2"
+                }
+            }
+        },
+        "link": {
+            "typography": {
+                "textDecoration": "underline"
+            }
+        }
+    },
+    "templateParts": [
+        {
+            "name": "header",
+            "title": "Header",
+            "area": "header",
+            "description": "Main site header."
+        }
+    ]
+}

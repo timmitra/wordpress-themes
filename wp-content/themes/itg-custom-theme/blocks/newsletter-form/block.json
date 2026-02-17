@@ -1,0 +1,15 @@
+{
+    "apiVersion": 2,
+    "name": "itg-custom-theme/newsletter-form",
+    "title": "Newsletter Signup",
+    "category": "widgets",
+    "icon": "email",
+    "description": "A simple newsletter signup form.",
+    "supports": {
+        "html": false
+    }, 
+    "editorScript": "itg-newsletter-editor",
+    "editorStyle": "itg-newsletter-editor-style",
+    "style": "itg-newsletter-style",
+    "render": "render.php"
+} 

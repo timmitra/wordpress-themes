@@ -1,0 +1,39 @@
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!.gitignore
+!wp-content/
+ 
+# Ignore everything in the "wp-content" directory, except the "plugins"
+# and "themes" directories.
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+ 
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+wp-content/plugins/*
+# !wp-content/plugins/my-single-file-plugin.php
+# !wp-content/plugins/my-directory-plugin/
+!wp-content/plugins/mtjc-posttypes/
+!wp-content/plugins/itg-app-banner/
+!wp-content/plugins/itg-post-view-widget/
+!wp-content/plugins/itg-post-views/
+!wp-content/plugins/mtjc_speakers/
+!wp-content/plugins/open-tickets/
+ 
+# Ignore everything in the "themes" directory, except the themes you
+# specify (see the commented-out example for a hint on how to do this.)
+wp-content/themes/*
+# !wp-content/themes/ibewcanada/
+#!wp-content/themes/sleandb/
+!wp-content/themes/lander/
+!wp-content/themes/mtjc/
+!wp-content/themes/my-block-theme
+!wp-content/themes/itg-custom-theme
+!wp-content/themes/sw-custom-theme
+!wp-content/themes/scroller/
+#!wp-content/plugins/score-meta-box/
+#!wp-content/plugins/ss-posttypes/
+#!wp-content/plugins/ss-media-metadata/
+.DS_Store
+wp-content/themes/sswp/.DS_Store
