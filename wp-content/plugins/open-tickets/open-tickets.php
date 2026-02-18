@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Open Tickets Form
  * Description: Simple form to create osTicket tickets via JSON API.
- * Version: 0.0.12
+ * Version: 0.0.13
  * Author: Tim Mitra
  */
 
@@ -83,11 +83,21 @@ function open_tickets_render_form() {
     // Handle form submission
     if (!empty($_POST['open_tickets_submit'])) {
 
-        // Check nonce
-        if (!isset($_POST['open_tickets_nonce']) || !wp_verify_nonce($_POST['open_tickets_nonce'], 'open_tickets_submit')) {
+        // Check nonce (check both tick 1 and 2 for better compatibility with caching)
+        $nonce_verified = isset($_POST['open_tickets_nonce']) && (
+            wp_verify_nonce($_POST['open_tickets_nonce'], 'open_tickets_submit') !== false
+        );
+        
+        if (!$nonce_verified) {
             $output .= '<div class="open-tickets-error">Security check failed. Please try again.</div>';
+            $output .= '<div class="open-tickets-error" style="font-size: 11px; margin-top: 5px;">';
+            $output .= 'If this problem persists, try:<br>';
+            $output .= '• Clearing your browser cache and cookies<br>';
+            $output .= '• Disabling any caching plugins temporarily<br>';
+            $output .= '• Refreshing the page before submitting';
+            $output .= '</div>';
         } else {
-            // Honeypot check - bots will fill this field, humans won't see it
+            // Check website field
             if (!empty($_POST['open_tickets_website'])) {
                 $output .= '<div class="open-tickets-error">Spam detected. Please try again.</div>';
             } else {
@@ -197,9 +207,8 @@ function open_tickets_render_form() {
     <form method="post" class="open-tickets-form">
         <?php wp_nonce_field('open_tickets_submit', 'open_tickets_nonce'); ?>
 
-        <!-- Honeypot field - hidden from humans, bots will fill it in -->
         <p style="display:none !important; visibility:hidden; position:absolute; left:-9999px;" aria-hidden="true">
-            <label for="open_tickets_website">Leave this field empty</label>
+            <label for="open_tickets_website">Website</label>
             <input type="text" id="open_tickets_website" name="open_tickets_website" value="" tabindex="-1" autocomplete="off">
         </p>
 
