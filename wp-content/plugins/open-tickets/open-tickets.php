@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Open Tickets Form
  * Description: Simple form to create osTicket tickets via JSON API.
- * Version: 0.0.14
+ * Version: 0.0.15
  * Author: Tim Mitra
  */
 
@@ -106,7 +106,7 @@ function open_tickets_render_form() {
                 $email   = sanitize_email($_POST['open_tickets_email'] ?? '');
                 $phone   = sanitize_text_field($_POST['open_tickets_phone'] ?? '');
                 $subject = sanitize_text_field($_POST['open_tickets_subject'] ?? '');
-                $message = wp_kses_post($_POST['open_tickets_message'] ?? '');
+                $message = wp_strip_all_tags($_POST['open_tickets_message'] ?? '');
 
             // Build the JSON payload (based on your example)
             $payload = [
@@ -374,7 +374,7 @@ function open_tickets_render_form() {
         </p>
 
         <p>
-            <label for="open_tickets_message">Message (HTML allowed)</label><br>
+            <label for="open_tickets_message">Message</label><br>
             <textarea id="open_tickets_message" name="open_tickets_message" rows="6" required></textarea>
         </p>
 
