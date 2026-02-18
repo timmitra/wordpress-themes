@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Open Tickets Form
  * Description: Simple form to create osTicket tickets via JSON API.
- * Version: 0.0.13
+ * Version: 0.0.14
  * Author: Tim Mitra
  */
 
@@ -203,6 +203,147 @@ function open_tickets_render_form() {
     // Render the form
     ob_start();
     ?>
+    
+    <style>
+    .open-tickets-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .open-tickets-form p {
+        margin-bottom: 20px;
+    }
+    
+    .open-tickets-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333333;
+        font-size: 14px;
+    }
+    
+    .open-tickets-form input[type="text"],
+    .open-tickets-form input[type="email"],
+    .open-tickets-form textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        font-size: 15px;
+        font-family: inherit;
+        background: #ffffff;
+        color: #333333;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+    }
+    
+    .open-tickets-form input[type="text"]:focus,
+    .open-tickets-form input[type="email"]:focus,
+    .open-tickets-form textarea:focus {
+        outline: none;
+        border-color: #2271b1;
+        box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.1);
+    }
+    
+    .open-tickets-form textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+    
+    .open-tickets-form button[type="submit"] {
+        background: #2271b1;
+        color: #ffffff;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+    
+    .open-tickets-form button[type="submit"]:hover {
+        background: #135e96;
+        transform: translateY(-1px);
+    }
+    
+    .open-tickets-form button[type="submit"]:active {
+        transform: translateY(0);
+    }
+    
+    .open-tickets-error {
+        background: #fef2f2;
+        border-left: 4px solid #dc2626;
+        color: #991b1b;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .open-tickets-success {
+        background: #f0fdf4;
+        border-left: 4px solid #16a34a;
+        color: #166534;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        .open-tickets-form {
+            background: #1e1e1e;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        .open-tickets-form label {
+            color: #e0e0e0;
+        }
+        
+        .open-tickets-form input[type="text"],
+        .open-tickets-form input[type="email"],
+        .open-tickets-form textarea {
+            background: #2a2a2a;
+            border-color: #404040;
+            color: #e0e0e0;
+        }
+        
+        .open-tickets-form input[type="text"]:focus,
+        .open-tickets-form input[type="email"]:focus,
+        .open-tickets-form textarea:focus {
+            border-color: #4a9eff;
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.2);
+        }
+        
+        .open-tickets-form button[type="submit"] {
+            background: #4a9eff;
+        }
+        
+        .open-tickets-form button[type="submit"]:hover {
+            background: #357abd;
+        }
+        
+        .open-tickets-error {
+            background: #2d1a1a;
+            border-left-color: #ef4444;
+            color: #fca5a5;
+        }
+        
+        .open-tickets-success {
+            background: #1a2d1a;
+            border-left-color: #22c55e;
+            color: #86efac;
+        }
+    }
+    </style>
 
     <form method="post" class="open-tickets-form">
         <?php wp_nonce_field('open_tickets_submit', 'open_tickets_nonce'); ?>
